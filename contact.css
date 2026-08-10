@@ -718,3 +718,124 @@ body {
     }
 
 }
+
+/* =========================================
+   CONTACT PAGE LAYOUT FIX
+   ADD THIS AT THE VERY END
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.contact-card,
+.share-card,
+.resume-card,
+.response-card,
+.form-card {
+    width: 100%;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    flex: none;
+}
+
+/* Keep contact sections one below another */
+
+.contact-card,
+.share-card,
+.resume-card,
+.response-card,
+.form-card {
+    display: block;
+}
+
+/* QR must stay inside the card */
+
+.qr-container {
+    width: 100%;
+    max-width: 260px;
+    margin: 30px auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+.portfolio-qr {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Share link */
+
+.share-link-box {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.share-link-box input {
+    min-width: 0;
+    flex: 1;
+}
+
+.share-link-box button {
+    flex-shrink: 0;
+}
+
+/* Buttons */
+
+.social-links,
+.resume-buttons,
+.choice-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .contact-card,
+    .share-card,
+    .resume-card,
+    .response-card,
+    .form-card {
+        width: calc(100% - 30px);
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .share-link-box {
+        flex-direction: column;
+    }
+
+    .share-link-box input,
+    .share-link-box button {
+        width: 100%;
+    }
+
+    .social-links,
+    .resume-buttons,
+    .choice-buttons {
+        flex-direction: column;
+    }
+
+    .social-btn,
+    .resume-btn,
+    .choice-btn {
+        width: 100%;
+    }
+
+}
