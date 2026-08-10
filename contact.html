@@ -5,836 +5,845 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>CHANDU — Contact</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="contact.css">
+    <link
+        rel="stylesheet"
+        href="contact.css"
+    >
 
 </head>
 
 
 <body>
 
+<main class="contact-page">
 
-<!-- =========================
-     PAGE LABEL
-     ========================= -->
 
-<p class="page-label">
-    05 — CONTACT
-</p>
+    <!-- =====================================
+         PAGE HEADER
+    ====================================== -->
 
+    <header class="contact-header">
 
-<!-- =========================
-     HEADER
-     ========================= -->
-
-<div class="contact-heading">
-
-    <p>
-        LET'S CONNECT ON
-    </p>
-
-    <h1>
-        CONTACT
-    </h1>
-
-    <p>
-        Visual Merchandiser • Portfolio • Opportunities
-    </p>
-
-</div>
-
-
-<!-- =========================
-     BASIC CONTACT
-     ========================= -->
-
-<section class="contact-card">
-
-    <h2>
-        CHANDU.
-    </h2>
-
-
-    <div class="contact-details">
-
-
-        <div class="contact-item">
-
-            <span>
-                MOBILE
-            </span>
-
-            <a href="tel:+917093489320">
-                +91 7093489320
-            </a>
-
-        </div>
-
-
-        <div class="contact-item">
-
-            <span>
-                EMAIL
-            </span>
-
-            <a href="mailto:chandur9989@gmail.com">
-                chandur9989@gmail.com
-            </a>
-
-        </div>
-
-
-    </div>
-
-
-    <!-- =========================
-         SOCIAL LINKS
-         ========================= -->
-
-    <div class="social-links">
-
-
-        <a
-            href="https://wa.me/917093489320"
-            target="_blank"
-            rel="noopener"
-            class="social-btn">
-
-            WhatsApp
-
-        </a>
-
-
-        <a
-            href="https://www.linkedin.com/in/chandu-rathod-9a0b1b1b2/"
-            target="_blank"
-            rel="noopener"
-            class="social-btn">
-
-            LinkedIn
-
-        </a>
-
-
-        <a
-            href="https://github.com/nandu-998/"
-            target="_blank"
-            rel="noopener"
-            class="social-btn">
-
-            GitHub
-
-        </a>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     PORTFOLIO SHARING
-     ========================= -->
-
-<section class="share-card">
-
-    <p class="section-label">
-        PORTFOLIO SHARE
-    </p>
-
-
-    <h2>
-        Share My Portfolio
-    </h2>
-
-
-    <p>
-        Share the portfolio using the view-only link or QR code.
-    </p>
-
-
-    <!-- PUBLIC PORTFOLIO LINK -->
-
-    <div class="share-link-box">
-
-        <input
-            type="text"
-            id="portfolioLink"
-            value="https://nandu-998.github.io/portfolio/"
-            readonly
-        >
-
-
-        <button
-            type="button"
-            id="copyLinkBtn">
-
-            COPY LINK
-
-        </button>
-
-    </div>
-
-
-    <!-- OPEN PORTFOLIO -->
-
-    <div class="portfolio-open">
-
-        <a
-            href="https://nandu-998.github.io/portfolio/"
-            target="_blank"
-            rel="noopener"
-            class="page-btn">
-
-            VIEW PORTFOLIO →
-
-        </a>
-
-    </div>
-
-
-    <!-- QR CODE -->
-
-    <div class="qr-container">
-
-        <img
-            id="portfolioQR"
-            src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fnandu-998.github.io%2Fportfolio%2F"
-            alt="Portfolio QR Code"
-            class="portfolio-qr"
-        >
-
-        <p>
-            SCAN TO VIEW PORTFOLIO
+        <p class="page-label">
+            05 — CONTACT
         </p>
 
-    </div>
+        <p class="eyebrow">
+            LET'S CONNECT
+        </p>
 
-</section>
+        <h1>
+            LET'S <span>CONNECT</span>
+        </h1>
 
+        <p class="subtitle">
+            Visual Merchandiser • Portfolio • Opportunities
+        </p>
 
-
-<!-- =========================
-     RESUME
-     ========================= -->
-
-<section class="resume-card">
-
-    <p class="section-label">
-        RESUME
-    </p>
-
-
-    <h2>
-        Resume Center
-    </h2>
-
-
-    <div class="resume-buttons">
-
-
-        <a
-            href="assets/resume.pdf"
-            target="_blank"
-            rel="noopener"
-            class="resume-btn">
-
-            VIEW RESUME
-
-        </a>
-
-
-        <a
-            href="assets/resume.pdf"
-            download
-            class="resume-btn">
-
-            DOWNLOAD RESUME
-
-        </a>
-
-
-    </div>
-
-</section>
+    </header>
 
 
 
-<!-- =========================
-     PURPOSE SELECTOR
-     ========================= -->
+    <!-- =====================================
+         MAIN GRID
+    ====================================== -->
 
-<section class="response-card">
-
-    <p class="section-label">
-        CONNECT WITH ME
-    </p>
+    <section class="contact-grid">
 
 
-    <h2>
-        What would you like to do?
-    </h2>
+        <!-- =================================
+             LEFT : PORTFOLIO SHARE
+        ================================== -->
+
+        <div class="panel share-panel">
+
+            <p class="section-label">
+                PORTFOLIO SHARE
+            </p>
+
+            <h2>
+                Share My Portfolio
+            </h2>
+
+            <p class="description">
+                Share the portfolio using the view-only link or QR code.
+            </p>
 
 
-    <div class="choice-buttons">
+            <!-- LINK -->
+
+            <div class="share-row">
+
+                <input
+                    type="text"
+                    id="portfolioLink"
+                    value="https://nandu-998.github.io/portfolio/"
+                    readonly
+                >
+
+                <button
+                    type="button"
+                    id="copyLinkBtn"
+                    class="primary-btn"
+                >
+                    COPY LINK
+                </button>
+
+            </div>
 
 
-        <button
-            type="button"
-            id="jobChoice"
-            class="choice-btn">
+            <!-- VIEW PORTFOLIO -->
 
+            <a
+                href="https://nandu-998.github.io/portfolio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="outline-btn view-btn"
+            >
+                VIEW PORTFOLIO
+                <span>→</span>
+            </a>
+
+
+            <!-- QR -->
+
+            <div class="qr-area">
+
+                <div
+                    id="qrcode"
+                    class="qrcode"
+                ></div>
+
+                <div class="qr-text">
+
+                    <strong>
+                        SCAN TO VIEW PORTFOLIO
+                    </strong>
+
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             CENTER : CONTACT DETAILS
+        ================================== -->
+
+        <div class="center-column">
+
+
+            <div class="panel contact-info-panel">
+
+                <h2>
+                    GET IN TOUCH
+                </h2>
+
+
+                <!-- MOBILE -->
+
+                <a
+                    href="tel:+917093489320"
+                    class="contact-line"
+                >
+
+                    <div class="contact-icon phone-icon">
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2
+                                19.79 19.79 0 0 1-8.63-3.07
+                                19.5 19.5 0 0 1-6-6
+                                A19.79 19.79 0 0 1 2.12 4.18
+                                2 2 0 0 1 4.11 2h3
+                                a2 2 0 0 1 2 1.72
+                                12.84 12.84 0 0 0 .7 2.81
+                                2 2 0 0 1-.45 2.11L8.09 9.91
+                                a16 16 0 0 0 6 6l1.27-1.27
+                                a2 2 0 0 1 2.11-.45
+                                12.84 12.84 0 0 0 2.81.7
+                                A2 2 0 0 1 22 16.92z"
+                            ></path>
+                        </svg>
+                    </div>
+
+                    <div>
+                        <small>MOBILE</small>
+                        <strong>+91 7093489320</strong>
+                    </div>
+
+                </a>
+
+
+
+                <!-- EMAIL -->
+
+                <a
+                    href="mailto:chandur9989@gmail.com"
+                    class="contact-line"
+                >
+
+                    <div class="contact-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <rect
+                                x="3"
+                                y="5"
+                                width="18"
+                                height="14"
+                                rx="2"
+                            ></rect>
+
+                            <polyline
+                                points="3,7 12,13 21,7"
+                            ></polyline>
+
+                        </svg>
+
+                    </div>
+
+                    <div>
+
+                        <small>EMAIL</small>
+
+                        <strong>
+                            chandur9989@gmail.com
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- LOCATION -->
+
+                <div class="contact-line">
+
+                    <div class="contact-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"
+                            ></path>
+
+                            <circle
+                                cx="12"
+                                cy="9"
+                                r="2.2"
+                            ></circle>
+
+                        </svg>
+
+                    </div>
+
+                    <div>
+
+                        <small>LOCATION</small>
+
+                        <strong>India</strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SOCIAL -->
+
+                <h3 class="connect-title">
+                    CONNECT ON
+                </h3>
+
+
+                <div class="social-grid">
+
+
+                    <!-- WHATSAPP -->
+
+                    <a
+                        href="https://wa.me/917093489320"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-card whatsapp"
+                    >
+
+                        <div class="social-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0
+                                    12 12 0 0 0 1.7 17.9L0 24l6.3-1.65
+                                    A12 12 0 0 0 24 12a11.9 11.9 0 0 0-3.5-8.5z"
+                                ></path>
+
+                                <path
+                                    d="M8.2 6.5c-.3-.7-.6-.7-.9-.7h-.8
+                                    c-.3 0-.8.1-1.1.5-.4.4-1.4 1.3-1.4 3.2
+                                    0 1.9 1.4 3.7 1.6 3.9.2.3 2.8 4.4
+                                    6.8 6 3.4 1.3 4.1 1 4.8.9.7-.1 2.2-.9
+                                    2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.3-.3-.7-.5
+                                    l-2.1-1c-.4-.2-.7-.1-1 .2l-.8 1
+                                    c-.2.3-.5.3-.9.1-1.2-.6-2.2-1.3-3-2.3
+                                    -.8-.9-1.3-2-1.5-2.3-.2-.4 0-.6.2-.8
+                                    l.6-.7c.2-.2.3-.5.4-.7.1-.2 0-.5-.1-.7z"
+                                ></path>
+
+                            </svg>
+
+                        </div>
+
+                        <span>WhatsApp</span>
+
+                    </a>
+
+
+
+                    <!-- LINKEDIN -->
+
+                    <a
+                        href="https://www.linkedin.com/in/chandu-rathod-9a0b1b1b2/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-card linkedin"
+                    >
+
+                        <div class="social-icon linkedin-letter">
+                            in
+                        </div>
+
+                        <span>LinkedIn</span>
+
+                    </a>
+
+
+
+                    <!-- GITHUB -->
+
+                    <a
+                        href="https://github.com/nandu-998/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="social-card github"
+                    >
+
+                        <div class="social-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M12 .5a12 12 0 0 0-3.8 23.4
+                                    c.6.1.8-.3.8-.6v-2.2
+                                    c-3.3.7-4-1.4-4-1.4
+                                    -.5-1.4-1.3-1.7-1.3-1.7
+                                    -1.1-.8.1-.8.1-.8
+                                    1.2.1 1.8 1.2 1.8 1.2
+                                    1.1 1.8 2.8 1.3 3.5 1
+                                    .1-.8.4-1.3.7-1.6
+                                    -2.7-.3-5.5-1.4-5.5-6
+                                    0-1.3.5-2.4 1.2-3.2
+                                    -.1-.3-.5-1.6.1-3.2
+                                    0 0 1-.3 3.3 1.2
+                                    a11.5 11.5 0 0 1 6 0
+                                    c2.3-1.5 3.3-1.2 3.3-1.2
+                                    .6 1.6.2 2.9.1 3.2
+                                    .8.8 1.2 1.9 1.2 3.2
+                                    0 4.6-2.8 5.7-5.5 6
+                                    .4.4.7 1.1.7 2.2v3.2
+                                    c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"
+                                ></path>
+
+                            </svg>
+
+                        </div>
+
+                        <span>GitHub</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RESUME -->
+
+            <div class="panel resume-panel">
+
+                <p class="section-label">
+                    RESUME
+                </p>
+
+                <h2>
+                    Resume
+                </h2>
+
+
+                <div class="resume-buttons">
+
+                    <a
+                        href="assets/resume.pdf"
+                        target="_blank"
+                        class="resume-view"
+                    >
+                        VIEW RESUME
+                    </a>
+
+                    <a
+                        href="assets/resume.pdf"
+                        download
+                        class="resume-download"
+                    >
+                        ↓ DOWNLOAD RESUME
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             RIGHT : ACTIONS
+        ================================== -->
+
+        <div class="panel action-panel">
+
+            <h2>
+                WHAT WOULD YOU LIKE TO DO?
+            </h2>
+
+            <div class="blue-line"></div>
+
+
+
+            <!-- JOB -->
+
+            <button
+                type="button"
+                id="jobChoice"
+                class="action-card"
+            >
+
+                <div class="action-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <rect
+                            x="3"
+                            y="7"
+                            width="18"
+                            height="13"
+                            rx="2"
+                        ></rect>
+
+                        <path
+                            d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                        ></path>
+
+                        <path
+                            d="M3 12h18"
+                        ></path>
+
+                    </svg>
+
+                </div>
+
+                <div class="action-content">
+
+                    <strong>
+                        JOB OPPORTUNITY
+                    </strong>
+
+                    <span>
+                        Tell me about an opportunity
+                    </span>
+
+                </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+
+            <!-- FEEDBACK -->
+
+            <button
+                type="button"
+                id="feedbackChoice"
+                class="action-card"
+            >
+
+                <div class="action-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+                        <path
+                            d="M20 4H4a2 2 0 0 0-2 2v11
+                            a2 2 0 0 0 2 2h4l4 3 4-3h4
+                            a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"
+                        ></path>
+
+                        <line
+                            x1="7"
+                            y1="10"
+                            x2="17"
+                            y2="10"
+                        ></line>
+
+                        <line
+                            x1="7"
+                            y1="14"
+                            x2="14"
+                            y2="14"
+                        ></line>
+
+                    </svg>
+
+                </div>
+
+                <div class="action-content">
+
+                    <strong>
+                        FEEDBACK
+                    </strong>
+
+                    <span>
+                        Help me improve
+                    </span>
+
+                </div>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FORMS
+    ====================================== -->
+
+    <section
+        id="jobFormSection"
+        class="form-panel hidden"
+    >
+
+        <p class="section-label">
             JOB OPPORTUNITY
+        </p>
 
-        </button>
+        <h2>
+            Tell Me About The Opportunity
+        </h2>
+
+        <form id="jobForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label>
+                        Brand / Company Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="brandName"
+                        placeholder="Enter brand or company name"
+                        required
+                    >
+
+                </div>
 
 
-        <button
-            type="button"
-            id="feedbackChoice"
-            class="choice-btn">
+                <div class="form-group">
 
+                    <label>
+                        HR / Manager Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="managerName"
+                        placeholder="Enter HR / Manager name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Company Email
+                    </label>
+
+                    <input
+                        type="email"
+                        name="companyEmail"
+                        placeholder="hr@company.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Contact Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        name="contactNumber"
+                        placeholder="+91 XXXXXXXXXX"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Job Role
+                    </label>
+
+                    <input
+                        type="text"
+                        name="jobRole"
+                        placeholder="Example: Area VM Lead"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                    <label>
+                        Offer / Opportunity Details
+                    </label>
+
+                    <textarea
+                        name="offerDetails"
+                        placeholder="Tell me about the opportunity..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                SEND OPPORTUNITY
+            </button>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- FEEDBACK FORM -->
+
+    <section
+        id="feedbackFormSection"
+        class="form-panel hidden"
+    >
+
+        <p class="section-label">
             FEEDBACK
+        </p>
 
-        </button>
-
-
-    </div>
-
-</section>
+        <h2>
+            Help Me Improve
+        </h2>
 
 
+        <form id="feedbackForm">
 
-<!-- =========================
-     JOB OPPORTUNITY FORM
-     ========================= -->
+            <div class="form-grid">
 
-<section
-    id="jobFormSection"
-    class="form-card hidden">
+                <div class="form-group">
 
+                    <label>
+                        Brand Name
+                    </label>
 
-    <p class="section-label">
-        JOB OPPORTUNITY
-    </p>
+                    <input
+                        type="text"
+                        name="feedbackBrand"
+                        placeholder="Enter brand name"
+                        required
+                    >
 
-
-    <h2>
-        Tell Me About The Opportunity
-    </h2>
-
-
-    <form id="jobForm">
+                </div>
 
 
-        <label>
-            Brand / Company Name
-        </label>
+                <div class="form-group">
 
-        <input
-            type="text"
-            name="brandName"
-            placeholder="Enter brand or company name"
-            required
+                    <label>
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        name="feedbackName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        name="feedbackEmail"
+                        placeholder="your@email.com"
+                    >
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                    <label>
+                        What Can Be Improved?
+                    </label>
+
+                    <textarea
+                        name="improvement"
+                        placeholder="Tell me what can be improved..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group full-width">
+
+                    <label>
+                        Additional Feedback
+                    </label>
+
+                    <textarea
+                        name="additionalFeedback"
+                        placeholder="Additional comments..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                SUBMIT FEEDBACK
+            </button>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PAGE NAVIGATION
+    ====================================== -->
+
+    <nav class="page-navigation">
+
+        <a
+            href="gallery.html"
+            class="page-btn"
         >
+            ← PREVIOUS
+        </a>
 
 
-        <label>
-            HR / Manager Name
-        </label>
+        <span class="page-counter">
+            <b>05</b> / 05
+        </span>
 
-        <input
-            type="text"
-            name="managerName"
-            placeholder="Enter HR / Manager name"
-            required
+
+        <a
+            href="index.html"
+            class="page-btn"
         >
+            HOME →
+        </a>
 
+    </nav>
 
-        <label>
-            Brand / Company Email
-        </label>
 
-        <input
-            type="email"
-            name="companyEmail"
-            placeholder="hr@company.com"
-            required
-        >
+</main>
 
 
-        <label>
-            Contact Number
-        </label>
+<!-- QR CODE LIBRARY -->
 
-        <input
-            type="tel"
-            name="contactNumber"
-            placeholder="+91"
-        >
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+></script>
 
 
-        <label>
-            Job Role
-        </label>
+<!-- CONTACT JAVASCRIPT -->
 
-        <input
-            type="text"
-            name="jobRole"
-            placeholder="Example: Area VM Lead"
-            required
-        >
-
-
-        <label>
-            Offer / Opportunity Details
-        </label>
-
-        <textarea
-            name="offerDetails"
-            rows="5"
-            placeholder="Tell me about the opportunity..."
-        ></textarea>
-
-
-        <button
-            type="submit"
-            class="submit-btn">
-
-            SEND OPPORTUNITY
-
-        </button>
-
-
-    </form>
-
-</section>
-
-
-
-<!-- =========================
-     FEEDBACK FORM
-     ========================= -->
-
-<section
-    id="feedbackFormSection"
-    class="form-card hidden">
-
-
-    <p class="section-label">
-        FEEDBACK
-    </p>
-
-
-    <h2>
-        Help Me Improve
-    </h2>
-
-
-    <form id="feedbackForm">
-
-
-        <label>
-            Brand Name
-        </label>
-
-        <input
-            type="text"
-            name="feedbackBrand"
-            placeholder="Enter brand name"
-            required
-        >
-
-
-        <label>
-            Your Name
-        </label>
-
-        <input
-            type="text"
-            name="feedbackName"
-            placeholder="Enter your name"
-            required
-        >
-
-
-        <label>
-            Email
-        </label>
-
-        <input
-            type="email"
-            name="feedbackEmail"
-            placeholder="your@email.com"
-        >
-
-
-        <label>
-            What Can Be Improved?
-        </label>
-
-        <textarea
-            name="improvement"
-            rows="5"
-            placeholder="Tell me what can be improved..."
-            required
-        ></textarea>
-
-
-        <label>
-            Additional Feedback
-        </label>
-
-        <textarea
-            name="additionalFeedback"
-            rows="4"
-            placeholder="Additional comments..."
-        ></textarea>
-
-
-        <button
-            type="submit"
-            class="submit-btn">
-
-            SUBMIT FEEDBACK
-
-        </button>
-
-
-    </form>
-
-</section>
-
-
-
-<!-- =========================
-     PAGE NAVIGATION
-     ========================= -->
-
-<div class="page-navigation">
-
-
-    <a
-        href="gallery.html"
-        class="page-btn">
-
-        ← PREVIOUS
-
-    </a>
-
-
-    <span class="page-counter">
-
-        05 / 05
-
-    </span>
-
-
-    <a
-        href="index.html"
-        class="page-btn">
-
-        HOME →
-
-    </a>
-
-
-</div>
-
-
-
-<!-- =========================
-     JAVASCRIPT
-     ========================= -->
-
-<script>
-
-
-/* =========================================
-   COPY PORTFOLIO LINK
-   ========================================= */
-
-
-const portfolioLink =
-    document.getElementById("portfolioLink");
-
-
-const copyLinkBtn =
-    document.getElementById("copyLinkBtn");
-
-
-copyLinkBtn.addEventListener(
-    "click",
-    async function () {
-
-        try {
-
-            await navigator.clipboard.writeText(
-                portfolioLink.value
-            );
-
-            copyLinkBtn.textContent =
-                "COPIED ✓";
-
-
-            setTimeout(
-                function () {
-
-                    copyLinkBtn.textContent =
-                        "COPY LINK";
-
-                },
-                2000
-            );
-
-
-        } catch (error) {
-
-            portfolioLink.select();
-
-            document.execCommand("copy");
-
-            copyLinkBtn.textContent =
-                "COPIED ✓";
-
-        }
-
-    }
-);
-
-
-
-/* =========================================
-   FORM ELEMENTS
-   ========================================= */
-
-
-const jobChoice =
-    document.getElementById("jobChoice");
-
-
-const feedbackChoice =
-    document.getElementById("feedbackChoice");
-
-
-const jobFormSection =
-    document.getElementById("jobFormSection");
-
-
-const feedbackFormSection =
-    document.getElementById("feedbackFormSection");
-
-
-/* =========================================
-   JOB OPPORTUNITY
-   ========================================= */
-
-
-jobChoice.addEventListener(
-    "click",
-    function () {
-
-        jobFormSection.classList.remove("hidden");
-
-        feedbackFormSection.classList.add("hidden");
-
-
-        jobChoice.classList.add("active");
-
-        feedbackChoice.classList.remove("active");
-
-
-        jobFormSection.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-    }
-);
-
-
-
-/* =========================================
-   FEEDBACK
-   ========================================= */
-
-
-feedbackChoice.addEventListener(
-    "click",
-    function () {
-
-        feedbackFormSection.classList.remove("hidden");
-
-        jobFormSection.classList.add("hidden");
-
-
-        feedbackChoice.classList.add("active");
-
-        jobChoice.classList.remove("active");
-
-
-        feedbackFormSection.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-    }
-);
-
-
-
-/* =========================================
-   JOB FORM
-   ========================================= */
-
-
-const jobForm =
-    document.getElementById("jobForm");
-
-
-jobForm.addEventListener(
-    "submit",
-    function (event) {
-
-        event.preventDefault();
-
-
-        const formData =
-            new FormData(jobForm);
-
-
-        const brand =
-            formData.get("brandName");
-
-
-        const manager =
-            formData.get("managerName");
-
-
-        const email =
-            formData.get("companyEmail");
-
-
-        const phone =
-            formData.get("contactNumber");
-
-
-        const role =
-            formData.get("jobRole");
-
-
-        const details =
-            formData.get("offerDetails");
-
-
-        const subject =
-            encodeURIComponent(
-                "Job Opportunity — " + role
-            );
-
-
-        const body =
-            encodeURIComponent(
-                "Brand / Company: " + brand +
-                "\nHR / Manager: " + manager +
-                "\nCompany Email: " + email +
-                "\nContact Number: " + phone +
-                "\nJob Role: " + role +
-                "\n\nOpportunity Details:\n" +
-                details
-            );
-
-
-        window.location.href =
-            "mailto:chandur9989@gmail.com" +
-            "?subject=" +
-            subject +
-            "&body=" +
-            body;
-
-    }
-);
-
-
-
-/* =========================================
-   FEEDBACK FORM
-   ========================================= */
-
-
-const feedbackForm =
-    document.getElementById("feedbackForm");
-
-
-feedbackForm.addEventListener(
-    "submit",
-    function (event) {
-
-        event.preventDefault();
-
-
-        const formData =
-            new FormData(feedbackForm);
-
-
-        const brand =
-            formData.get("feedbackBrand");
-
-
-        const name =
-            formData.get("feedbackName");
-
-
-        const email =
-            formData.get("feedbackEmail");
-
-
-        const improvement =
-            formData.get("improvement");
-
-
-        const additional =
-            formData.get("additionalFeedback");
-
-
-        const subject =
-            encodeURIComponent(
-                "Portfolio Feedback — " + brand
-            );
-
-
-        const body =
-            encodeURIComponent(
-                "Brand Name: " + brand +
-                "\nName: " + name +
-                "\nEmail: " + email +
-                "\n\nWhat Can Be Improved:\n" +
-                improvement +
-                "\n\nAdditional Feedback:\n" +
-                additional
-            );
-
-
-        window.location.href =
-            "mailto:chandur9989@gmail.com" +
-            "?subject=" +
-            subject +
-            "&body=" +
-            body;
-
-    }
-);
-
-
-</script>
+<script src="contact.js"></script>
 
 
 </body>
+
 </html>
