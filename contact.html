@@ -10,535 +10,831 @@
 
     <title>CHANDU — Contact</title>
 
-<link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="contact.css">
 
 </head>
 
 
-
 <body>
 
-<main class="contact-page">
+
+<!-- =========================
+     PAGE LABEL
+     ========================= -->
+
+<p class="page-label">
+    05 — CONTACT
+</p>
 
 
-    <!-- PAGE LABEL -->
+<!-- =========================
+     HEADER
+     ========================= -->
 
-    <p class="page-label">
-        05 — CONTACT
+<div class="contact-heading">
+
+    <p>
+        LET'S CONNECT ON
+    </p>
+
+    <h1>
+        CONTACT
+    </h1>
+
+    <p>
+        Visual Merchandiser • Portfolio • Opportunities
+    </p>
+
+</div>
+
+
+<!-- =========================
+     BASIC CONTACT
+     ========================= -->
+
+<section class="contact-card">
+
+    <h2>
+        CHANDU.
+    </h2>
+
+
+    <div class="contact-details">
+
+
+        <div class="contact-item">
+
+            <span>
+                MOBILE
+            </span>
+
+            <a href="tel:+917093489320">
+                +91 7093489320
+            </a>
+
+        </div>
+
+
+        <div class="contact-item">
+
+            <span>
+                EMAIL
+            </span>
+
+            <a href="mailto:chandur9989@gmail.com">
+                chandur9989@gmail.com
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         SOCIAL LINKS
+         ========================= -->
+
+    <div class="social-links">
+
+
+        <a
+            href="https://wa.me/917093489320"
+            target="_blank"
+            rel="noopener"
+            class="social-btn">
+
+            WhatsApp
+
+        </a>
+
+
+        <a
+            href="https://www.linkedin.com/in/chandu-rathod-9a0b1b1b2/"
+            target="_blank"
+            rel="noopener"
+            class="social-btn">
+
+            LinkedIn
+
+        </a>
+
+
+        <a
+            href="https://github.com/nandu-998/"
+            target="_blank"
+            rel="noopener"
+            class="social-btn">
+
+            GitHub
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PORTFOLIO SHARING
+     ========================= -->
+
+<section class="share-card">
+
+    <p class="section-label">
+        PORTFOLIO SHARE
     </p>
 
 
-    <!-- HEADER -->
+    <h2>
+        Share My Portfolio
+    </h2>
 
-    <div class="contact-heading">
 
-        <p>
-            LET'S CONNECT ON
-        </p>
+    <p>
+        Share the portfolio using the view-only link or QR code.
+    </p>
 
-        <h1>
-            CONTACT
-        </h1>
 
-        <p>
-            Visual Merchandiser • Portfolio • Opportunities
-        </p>
+    <!-- PUBLIC PORTFOLIO LINK -->
+
+    <div class="share-link-box">
+
+        <input
+            type="text"
+            id="portfolioLink"
+            value="https://nandu-998.github.io/portfolio/"
+            readonly
+        >
+
+
+        <button
+            type="button"
+            id="copyLinkBtn">
+
+            COPY LINK
+
+        </button>
 
     </div>
 
 
-    <!-- BASIC CONTACT -->
+    <!-- OPEN PORTFOLIO -->
 
-    <section class="contact-card">
+    <div class="portfolio-open">
 
-        <h2>
-            CHANDU.
-        </h2>
+        <a
+            href="https://nandu-998.github.io/portfolio/"
+            target="_blank"
+            rel="noopener"
+            class="page-btn">
 
+            VIEW PORTFOLIO →
 
-        <div class="contact-details">
+        </a>
 
-            <div class="contact-item">
-
-                <span>
-                    MOBILE
-                </span>
-
-                <a href="tel:+917093489320">
-                    +91 7093489320
-                </a>
-
-            </div>
+    </div>
 
 
-            <div class="contact-item">
+    <!-- QR CODE -->
 
-                <span>
-                    EMAIL
-                </span>
+    <div class="qr-container">
 
-                <a href="mailto:chandur9989@gmail.com">
-                    chandur9989@gmail.com
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- SOCIAL LINKS -->
-
-        <div class="social-links">
-
-            <a
-                href="https://wa.me/917093489320"
-                target="_blank"
-                class="social-btn">
-
-                WhatsApp
-
-            </a>
-
-
-            <a
-                href="https://www.linkedin.com/in/chandu-rathod-9a0b1b1b2/"
-                target="_blank"
-                class="social-btn">
-
-                LinkedIn
-
-            </a>
-
-
-            <a
-                href="https://nandu-998.github.io/portfolio/"
-                target="_blank"
-                class="social-btn">
-
-                GitHub
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- PORTFOLIO SHARING -->
-
-    <section class="share-card">
-
-        <p class="section-label">
-            PORTFOLIO SHARE
-        </p>
-
-        <h2>
-            Share My Portfolio
-        </h2>
+        <img
+            id="portfolioQR"
+            src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fnandu-998.github.io%2Fportfolio%2F"
+            alt="Portfolio QR Code"
+            class="portfolio-qr"
+        >
 
         <p>
-            Share the portfolio using the view-only link or QR code.
+            SCAN TO VIEW PORTFOLIO
         </p>
 
+    </div>
 
-        <div class="share-link-box">
-
-            <input
-                type="text"
-                id="portfolioLink"
-                value="https://nandu-998.github.io/portfolio/"
-                readonly
-            >
-
-            <button
-                id="copyLinkBtn">
-
-                COPY LINK
-
-            </button>
-
-        </div>
-
-
-        <!-- QR CODE -->
-
-        <div class="qr-container">
-
-            <div
-                id="qrcode">
-            </div>
-
-            <p>
-                Scan to view portfolio
-            </p>
-
-        </div>
-
-    </section>
+</section>
 
 
 
-    <!-- RESUME -->
+<!-- =========================
+     RESUME
+     ========================= -->
 
-    <section class="resume-card">
+<section class="resume-card">
 
-        <p class="section-label">
-            RESUME
-        </p>
-
-        <h2>
-            Resume Center
-        </h2>
+    <p class="section-label">
+        RESUME
+    </p>
 
 
-        <div class="resume-buttons">
-
-            <a
-                href="assets/resume.pdf"
-                target="_blank"
-                class="resume-btn">
-
-                VIEW RESUME
-
-            </a>
+    <h2>
+        Resume Center
+    </h2>
 
 
-            <a
-                href="assets/resume.pdf"
-                download
-                class="resume-btn">
-
-                DOWNLOAD RESUME
-
-            </a>
-
-        </div>
-
-    </section>
+    <div class="resume-buttons">
 
 
+        <a
+            href="assets/resume.pdf"
+            target="_blank"
+            rel="noopener"
+            class="resume-btn">
 
-    <!-- PURPOSE SELECTOR -->
+            VIEW RESUME
 
-    <section class="response-card">
-
-        <p class="section-label">
-            CONNECT WITH ME
-        </p>
-
-        <h2>
-            What would you like to do?
-        </h2>
+        </a>
 
 
-        <div class="choice-buttons">
+        <a
+            href="assets/resume.pdf"
+            download
+            class="resume-btn">
 
-            <button
-                type="button"
-                id="jobChoice"
-                class="choice-btn">
+            DOWNLOAD RESUME
 
-                JOB OPPORTUNITY
-
-            </button>
+        </a>
 
 
-            <button
-                type="button"
-                id="feedbackChoice"
-                class="choice-btn">
+    </div>
 
-                FEEDBACK
-
-            </button>
-
-        </div>
-
-    </section>
+</section>
 
 
 
-    <!-- JOB OPPORTUNITY FORM -->
+<!-- =========================
+     PURPOSE SELECTOR
+     ========================= -->
 
-    <section
-        id="jobFormSection"
-        class="form-card hidden">
+<section class="response-card">
 
-        <p class="section-label">
+    <p class="section-label">
+        CONNECT WITH ME
+    </p>
+
+
+    <h2>
+        What would you like to do?
+    </h2>
+
+
+    <div class="choice-buttons">
+
+
+        <button
+            type="button"
+            id="jobChoice"
+            class="choice-btn">
+
             JOB OPPORTUNITY
-        </p>
 
-        <h2>
-            Tell Me About The Opportunity
-        </h2>
+        </button>
 
 
-        <form id="jobForm">
+        <button
+            type="button"
+            id="feedbackChoice"
+            class="choice-btn">
 
-
-            <label>
-                Brand / Company Name
-            </label>
-
-            <input
-                type="text"
-                name="brandName"
-                placeholder="Enter brand or company name"
-                required
-            >
-
-
-            <label>
-                HR / Manager Name
-            </label>
-
-            <input
-                type="text"
-                name="managerName"
-                placeholder="Enter HR / Manager name"
-                required
-            >
-
-
-            <label>
-                Brand / Company Email
-            </label>
-
-            <input
-                type="email"
-                name="companyEmail"
-                placeholder="hr@company.com"
-                required
-            >
-
-
-            <label>
-                Contact Number
-            </label>
-
-            <input
-                type="tel"
-                name="contactNumber"
-                placeholder="+91"
-            >
-
-
-            <label>
-                Job Role
-            </label>
-
-            <input
-                type="text"
-                name="jobRole"
-                placeholder="Example: Area VM Lead"
-                required
-            >
-
-
-            <label>
-                Offer / Opportunity Details
-            </label>
-
-            <textarea
-                name="offerDetails"
-                rows="5"
-                placeholder="Tell me about the opportunity..."
-            ></textarea>
-
-
-            <button
-                type="submit"
-                class="submit-btn">
-
-                SEND OPPORTUNITY
-
-            </button>
-
-        </form>
-
-    </section>
-
-
-
-    <!-- FEEDBACK FORM -->
-
-    <section
-        id="feedbackFormSection"
-        class="form-card hidden">
-
-        <p class="section-label">
             FEEDBACK
-        </p>
 
-        <h2>
-            Help Me Improve
-        </h2>
+        </button>
 
-
-        <form id="feedbackForm">
-
-
-            <label>
-                Brand Name
-            </label>
-
-            <input
-                type="text"
-                name="feedbackBrand"
-                placeholder="Enter brand name"
-                required
-            >
-
-
-            <label>
-                Your Name
-            </label>
-
-            <input
-                type="text"
-                name="feedbackName"
-                placeholder="Enter your name"
-                required
-            >
-
-
-            <label>
-                Email
-            </label>
-
-            <input
-                type="email"
-                name="feedbackEmail"
-                placeholder="your@email.com"
-            >
-
-
-            <label>
-                What Can Be Improved?
-            </label>
-
-            <textarea
-                name="improvement"
-                rows="5"
-                placeholder="Tell me what can be improved..."
-                required
-            ></textarea>
-
-
-            <label>
-                Additional Feedback
-            </label>
-
-            <textarea
-                name="additionalFeedback"
-                rows="4"
-                placeholder="Additional comments..."
-            ></textarea>
-
-
-            <button
-                type="submit"
-                class="submit-btn">
-
-                SUBMIT FEEDBACK
-
-            </button>
-
-        </form>
-
-    </section>
-
-
-
-    <!-- PAGE NAVIGATION -->
-
-    <div class="page-navigation">
-
-        <a
-            href="gallery.html"
-            class="page-btn">
-
-            ← PREVIOUS
-
-        </a>
-
-
-        <span class="page-counter">
-
-            05 / 05
-
-        </span>
-
-
-        <a
-            href="index.html"
-            class="page-btn">
-
-            HOME →
-
-        </a>
 
     </div>
 
+</section>
 
-</main>
-</main>
 
+
+<!-- =========================
+     JOB OPPORTUNITY FORM
+     ========================= -->
+
+<section
+    id="jobFormSection"
+    class="form-card hidden">
+
+
+    <p class="section-label">
+        JOB OPPORTUNITY
+    </p>
+
+
+    <h2>
+        Tell Me About The Opportunity
+    </h2>
+
+
+    <form id="jobForm">
+
+
+        <label>
+            Brand / Company Name
+        </label>
+
+        <input
+            type="text"
+            name="brandName"
+            placeholder="Enter brand or company name"
+            required
+        >
+
+
+        <label>
+            HR / Manager Name
+        </label>
+
+        <input
+            type="text"
+            name="managerName"
+            placeholder="Enter HR / Manager name"
+            required
+        >
+
+
+        <label>
+            Brand / Company Email
+        </label>
+
+        <input
+            type="email"
+            name="companyEmail"
+            placeholder="hr@company.com"
+            required
+        >
+
+
+        <label>
+            Contact Number
+        </label>
+
+        <input
+            type="tel"
+            name="contactNumber"
+            placeholder="+91"
+        >
+
+
+        <label>
+            Job Role
+        </label>
+
+        <input
+            type="text"
+            name="jobRole"
+            placeholder="Example: Area VM Lead"
+            required
+        >
+
+
+        <label>
+            Offer / Opportunity Details
+        </label>
+
+        <textarea
+            name="offerDetails"
+            rows="5"
+            placeholder="Tell me about the opportunity..."
+        ></textarea>
+
+
+        <button
+            type="submit"
+            class="submit-btn">
+
+            SEND OPPORTUNITY
+
+        </button>
+
+
+    </form>
+
+</section>
+
+
+
+<!-- =========================
+     FEEDBACK FORM
+     ========================= -->
+
+<section
+    id="feedbackFormSection"
+    class="form-card hidden">
+
+
+    <p class="section-label">
+        FEEDBACK
+    </p>
+
+
+    <h2>
+        Help Me Improve
+    </h2>
+
+
+    <form id="feedbackForm">
+
+
+        <label>
+            Brand Name
+        </label>
+
+        <input
+            type="text"
+            name="feedbackBrand"
+            placeholder="Enter brand name"
+            required
+        >
+
+
+        <label>
+            Your Name
+        </label>
+
+        <input
+            type="text"
+            name="feedbackName"
+            placeholder="Enter your name"
+            required
+        >
+
+
+        <label>
+            Email
+        </label>
+
+        <input
+            type="email"
+            name="feedbackEmail"
+            placeholder="your@email.com"
+        >
+
+
+        <label>
+            What Can Be Improved?
+        </label>
+
+        <textarea
+            name="improvement"
+            rows="5"
+            placeholder="Tell me what can be improved..."
+            required
+        ></textarea>
+
+
+        <label>
+            Additional Feedback
+        </label>
+
+        <textarea
+            name="additionalFeedback"
+            rows="4"
+            placeholder="Additional comments..."
+        ></textarea>
+
+
+        <button
+            type="submit"
+            class="submit-btn">
+
+            SUBMIT FEEDBACK
+
+        </button>
+
+
+    </form>
+
+</section>
+
+
+
+<!-- =========================
+     PAGE NAVIGATION
+     ========================= -->
+
+<div class="page-navigation">
+
+
+    <a
+        href="gallery.html"
+        class="page-btn">
+
+        ← PREVIOUS
+
+    </a>
+
+
+    <span class="page-counter">
+
+        05 / 05
+
+    </span>
+
+
+    <a
+        href="index.html"
+        class="page-btn">
+
+        HOME →
+
+    </a>
+
+
+</div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+     ========================= -->
 
 <script>
 
-const jobChoice = document.getElementById("jobChoice");
-const feedbackChoice = document.getElementById("feedbackChoice");
 
-const jobFormSection = document.getElementById("jobFormSection");
-const feedbackFormSection = document.getElementById("feedbackFormSection");
-
-
-/* JOB OPPORTUNITY */
-
-jobChoice.addEventListener("click", function () {
-
-    jobFormSection.classList.remove("hidden");
-
-    feedbackFormSection.classList.add("hidden");
-
-    jobChoice.classList.add("active");
-
-    feedbackChoice.classList.remove("active");
-
-    jobFormSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
-});
+/* =========================================
+   COPY PORTFOLIO LINK
+   ========================================= */
 
 
-/* FEEDBACK */
+const portfolioLink =
+    document.getElementById("portfolioLink");
 
-feedbackChoice.addEventListener("click", function () {
 
-    feedbackFormSection.classList.remove("hidden");
+const copyLinkBtn =
+    document.getElementById("copyLinkBtn");
 
-    jobFormSection.classList.add("hidden");
 
-    feedbackChoice.classList.add("active");
+copyLinkBtn.addEventListener(
+    "click",
+    async function () {
 
-    jobChoice.classList.remove("active");
+        try {
 
-    feedbackFormSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
+            await navigator.clipboard.writeText(
+                portfolioLink.value
+            );
 
-});
+            copyLinkBtn.textContent =
+                "COPIED ✓";
+
+
+            setTimeout(
+                function () {
+
+                    copyLinkBtn.textContent =
+                        "COPY LINK";
+
+                },
+                2000
+            );
+
+
+        } catch (error) {
+
+            portfolioLink.select();
+
+            document.execCommand("copy");
+
+            copyLinkBtn.textContent =
+                "COPIED ✓";
+
+        }
+
+    }
+);
+
+
+
+/* =========================================
+   FORM ELEMENTS
+   ========================================= */
+
+
+const jobChoice =
+    document.getElementById("jobChoice");
+
+
+const feedbackChoice =
+    document.getElementById("feedbackChoice");
+
+
+const jobFormSection =
+    document.getElementById("jobFormSection");
+
+
+const feedbackFormSection =
+    document.getElementById("feedbackFormSection");
+
+
+/* =========================================
+   JOB OPPORTUNITY
+   ========================================= */
+
+
+jobChoice.addEventListener(
+    "click",
+    function () {
+
+        jobFormSection.classList.remove("hidden");
+
+        feedbackFormSection.classList.add("hidden");
+
+
+        jobChoice.classList.add("active");
+
+        feedbackChoice.classList.remove("active");
+
+
+        jobFormSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+);
+
+
+
+/* =========================================
+   FEEDBACK
+   ========================================= */
+
+
+feedbackChoice.addEventListener(
+    "click",
+    function () {
+
+        feedbackFormSection.classList.remove("hidden");
+
+        jobFormSection.classList.add("hidden");
+
+
+        feedbackChoice.classList.add("active");
+
+        jobChoice.classList.remove("active");
+
+
+        feedbackFormSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+);
+
+
+
+/* =========================================
+   JOB FORM
+   ========================================= */
+
+
+const jobForm =
+    document.getElementById("jobForm");
+
+
+jobForm.addEventListener(
+    "submit",
+    function (event) {
+
+        event.preventDefault();
+
+
+        const formData =
+            new FormData(jobForm);
+
+
+        const brand =
+            formData.get("brandName");
+
+
+        const manager =
+            formData.get("managerName");
+
+
+        const email =
+            formData.get("companyEmail");
+
+
+        const phone =
+            formData.get("contactNumber");
+
+
+        const role =
+            formData.get("jobRole");
+
+
+        const details =
+            formData.get("offerDetails");
+
+
+        const subject =
+            encodeURIComponent(
+                "Job Opportunity — " + role
+            );
+
+
+        const body =
+            encodeURIComponent(
+                "Brand / Company: " + brand +
+                "\nHR / Manager: " + manager +
+                "\nCompany Email: " + email +
+                "\nContact Number: " + phone +
+                "\nJob Role: " + role +
+                "\n\nOpportunity Details:\n" +
+                details
+            );
+
+
+        window.location.href =
+            "mailto:chandur9989@gmail.com" +
+            "?subject=" +
+            subject +
+            "&body=" +
+            body;
+
+    }
+);
+
+
+
+/* =========================================
+   FEEDBACK FORM
+   ========================================= */
+
+
+const feedbackForm =
+    document.getElementById("feedbackForm");
+
+
+feedbackForm.addEventListener(
+    "submit",
+    function (event) {
+
+        event.preventDefault();
+
+
+        const formData =
+            new FormData(feedbackForm);
+
+
+        const brand =
+            formData.get("feedbackBrand");
+
+
+        const name =
+            formData.get("feedbackName");
+
+
+        const email =
+            formData.get("feedbackEmail");
+
+
+        const improvement =
+            formData.get("improvement");
+
+
+        const additional =
+            formData.get("additionalFeedback");
+
+
+        const subject =
+            encodeURIComponent(
+                "Portfolio Feedback — " + brand
+            );
+
+
+        const body =
+            encodeURIComponent(
+                "Brand Name: " + brand +
+                "\nName: " + name +
+                "\nEmail: " + email +
+                "\n\nWhat Can Be Improved:\n" +
+                improvement +
+                "\n\nAdditional Feedback:\n" +
+                additional
+            );
+
+
+        window.location.href =
+            "mailto:chandur9989@gmail.com" +
+            "?subject=" +
+            subject +
+            "&body=" +
+            body;
+
+    }
+);
+
 
 </script>
 
-
-</body>
-</html>
 
 </body>
 
