@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CHANDU — VM Gallery</title>
+
+<link rel="stylesheet" href="gallery.css">
+
+</head>
+
+
+<body>
+
+<main class="gallery-page">
+
+    <!-- PAGE NUMBER -->
+
+    <p class="page-label">
+        04 — VM GALLERY
+    </p>
+
+
+    <!-- TITLE -->
+
+    <div class="gallery-heading">
+
+        <p>
+            VISUAL MERCHANDISING
+        </p>
+
+        <h1>
+            VM GALLERY
+        </h1>
+
+    </div>
+
+
+    <!-- LARGE IMAGE -->
+
+    <div class="gallery-image-container">
+
+        <img
+            id="galleryImage"
+            src="assets/galary images/1.jpg"
+            alt="VM Gallery Image"
+        >
+
+    </div>
+
+
+    <!-- IMAGE COUNTER -->
+
+    <div class="gallery-counter">
+
+        <span id="currentImage">
+            01
+        </span>
+
+        <span>
+            /
+        </span>
+
+        <span id="totalImages">
+            20
+        </span>
+
+    </div>
+
+
+    <!-- DOTS -->
+
+    <div
+        class="gallery-dots"
+        id="galleryDots">
+    </div>
+
+
+    <!-- IMAGE CONTROLS -->
+
+    <div class="gallery-navigation">
+
+        <button
+            id="prevBtn"
+            class="gallery-btn">
+
+            ← PREVIOUS
+
+        </button>
+
+
+        <button
+            id="fullscreenBtn"
+            class="gallery-btn">
+
+            ⛶ FULL SCREEN
+
+        </button>
+
+
+        <button
+            id="nextBtn"
+            class="gallery-btn">
+
+            NEXT →
+
+        </button>
+
+    </div>
+
+
+    <!-- PORTFOLIO PAGE NAVIGATION -->
+
+    <div class="page-navigation">
+
+        <a
+            href="skills.html"
+            class="page-btn">
+
+            ← PREVIOUS
+
+        </a>
+
+
+        <span class="page-counter">
+
+            04 / 05
+
+        </span>
+
+
+        <a
+            href="contact.html"
+            class="page-btn">
+
+            NEXT →
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+     ========================= -->
+
+<script>
+
+
+
+    /* =========================================
+       VM GALLERY — 30 IMAGES
+       ========================================= */
+
+
+    /* IMAGE FOLDER */
+
+    const imageFolder = "assets/galary images/";
+
+
+    /* IMAGE LIST */
+
+    const images = [];
+
+    for (let i = 1; i <= 30; i++) {
+
+        images.push(
+            imageFolder + i + ".jpg"
+        );
+
+    }
+
+
+    /* CURRENT IMAGE */
+
+    let currentIndex = 0;
+
+
+    /* ELEMENTS */
+
+    const galleryImage =
+        document.getElementById("galleryImage");
+
+    const currentImage =
+        document.getElementById("currentImage");
+
+    const totalImages =
+        document.getElementById("totalImages");
+
+    const galleryDots =
+        document.getElementById("galleryDots");
+
+    const prevBtn =
+        document.getElementById("prevBtn");
+
+    const nextBtn =
+        document.getElementById("nextBtn");
+
+    const fullscreenBtn =
+        document.getElementById("fullscreenBtn");
+
+
+    /* TOTAL IMAGES */
+
+    totalImages.textContent =
+        String(images.length).padStart(2, "0");
+
+
+    /* =========================================
+       CREATE DOTS
+       ========================================= */
+
+    images.forEach((image, index) => {
+
+        const dot =
+            document.createElement("button");
+
+        dot.type = "button";
+
+        dot.classList.add("gallery-dot");
+
+        dot.setAttribute(
+            "aria-label",
+            "Open image " + (index + 1)
+        );
+
+
+        dot.addEventListener(
+            "click",
+            function () {
+
+                currentIndex = index;
+
+                showImage();
+
+            }
+        );
+
+
+        galleryDots.appendChild(dot);
+
+    });
+
+
+    /* =========================================
+       SHOW IMAGE
+       ========================================= */
+
+    function showImage() {
+
+        galleryImage.src =
+            images[currentIndex];
+
+
+        galleryImage.alt =
+            "VM Gallery Image " +
+            (currentIndex + 1);
+
+
+        currentImage.textContent =
+            String(currentIndex + 1)
+                .padStart(2, "0");
+
+
+        const dots =
+            document.querySelectorAll(
+                ".gallery-dot"
+            );
+
+
+        dots.forEach(
+            function (dot, index) {
+
+                dot.classList.toggle(
+                    "active",
+                    index === currentIndex
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================
+       NEXT BUTTON
+       ========================================= */
+
+    nextBtn.addEventListener(
+        "click",
+        function () {
+
+            currentIndex++;
+
+            if (
+                currentIndex >= images.length
+            ) {
+
+                currentIndex = 0;
+
+            }
+
+            showImage();
+
+        }
+    );
+
+
+    /* =========================================
+       PREVIOUS BUTTON
+       ========================================= */
+
+    prevBtn.addEventListener(
+        "click",
+        function () {
+
+            currentIndex--;
+
+            if (
+                currentIndex < 0
+            ) {
+
+                currentIndex =
+                    images.length - 1;
+
+            }
+
+            showImage();
+
+        }
+    );
+
+
+    /* =========================================
+       FULL SCREEN
+       ========================================= */
+
+    fullscreenBtn.addEventListener(
+        "click",
+        function () {
+
+            if (
+                galleryImage.requestFullscreen
+            ) {
+
+                galleryImage.requestFullscreen();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================
+       KEYBOARD CONTROL
+       ========================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "ArrowRight"
+            ) {
+
+                nextBtn.click();
+
+            }
+
+
+            if (
+                event.key === "ArrowLeft"
+            ) {
+
+                prevBtn.click();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================
+       IMAGE ERROR CHECK
+       ========================================= */
+
+    galleryImage.addEventListener(
+        "error",
+        function () {
+
+            console.error(
+                "Image not found:",
+                images[currentIndex]
+            );
+
+        }
+    );
+
+
+    /* =========================================
+       FIRST IMAGE
+       ========================================= */
+
+    showImage();
+
+
+</script>
+
+
+</body>
+
+</html>
