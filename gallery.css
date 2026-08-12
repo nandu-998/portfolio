@@ -1,0 +1,567 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(45, 100, 220, 0.14),
+            transparent 45%
+        ),
+        #050810;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.gallery-page {
+
+    width: min(1100px, 94vw);
+
+    min-height: 100vh;
+
+    margin: auto;
+
+    padding:
+        35px
+        0
+        30px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.gallery-header {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+.small-label {
+
+    color: #4d86ff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.gallery-header h1 {
+
+    margin-top: 8px;
+
+    font-size: clamp(
+        32px,
+        6vw,
+        55px
+    );
+
+    letter-spacing: 3px;
+}
+
+
+.subtitle {
+
+    margin-top: 8px;
+
+    color: #8995aa;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   CATEGORY BUTTONS
+========================================= */
+
+.category-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 25px;
+}
+
+
+.category-btn {
+
+    min-height: 40px;
+
+    padding:
+        0
+        16px;
+
+    border:
+        1px solid
+        rgba(70, 120, 255, 0.4);
+
+    border-radius: 8px;
+
+    background:
+        rgba(10, 17, 32, 0.8);
+
+    color: #9ca9be;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.category-btn:hover {
+
+    color: #ffffff;
+
+    border-color: #477fff;
+}
+
+
+.category-btn.active {
+
+    background: #235dcc;
+
+    color: #ffffff;
+
+    border-color: #5b8fff;
+
+    box-shadow:
+        0 0 20px
+        rgba(50, 110, 255, 0.25);
+}
+
+
+/* =========================================
+   VIEWER
+========================================= */
+
+.gallery-viewer {
+
+    position: relative;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   COUNTER
+========================================= */
+
+.image-number {
+
+    margin-bottom: 10px;
+
+    color: #738096;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   IMAGE FRAME
+========================================= */
+
+.image-frame {
+
+    position: relative;
+
+    width: 100%;
+
+    height: min(
+        65vh,
+        650px
+    );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(75, 125, 255, 0.35);
+
+    border-radius: 16px;
+
+    background:
+        rgba(3, 7, 15, 0.95);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================
+   MAIN IMAGE
+========================================= */
+
+#galleryImage {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 10px;
+
+    display: block;
+
+    opacity: 1;
+
+    transform:
+        scale(1);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+
+    will-change:
+        opacity,
+        transform;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+
+#galleryImage.loading {
+
+    opacity: 0;
+
+    transform:
+        scale(0.985);
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.image-loading {
+
+    position: absolute;
+
+    z-index: 2;
+
+    display: none;
+
+    color: #5d8fff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.image-loading.show {
+
+    display: block;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.image-title {
+
+    margin-top: 12px;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.gallery-controls {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+.control-btn {
+
+    min-width: 130px;
+
+    height: 42px;
+
+    padding:
+        0
+        15px;
+
+    border:
+        1px solid
+        rgba(70, 120, 255, 0.45);
+
+    border-radius: 8px;
+
+    background:
+        rgba(8, 15, 28, 0.9);
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.control-btn:hover {
+
+    background: #1e5dcc;
+
+    border-color: #4e86ff;
+}
+
+
+/* =========================================
+   PAGE NAVIGATION
+========================================= */
+
+.page-navigation {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(70, 120, 255, 0.2);
+}
+
+
+.page-counter {
+
+    color: #4d86ff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.page-btn {
+
+    min-width: 110px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(70, 120, 255, 0.45);
+
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.page-btn:hover {
+
+    background: #1e5dcc;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .gallery-page {
+
+        width: 94vw;
+
+        padding-top: 25px;
+    }
+
+
+    .gallery-header h1 {
+
+        font-size: 32px;
+    }
+
+
+    .subtitle {
+
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+
+
+    .category-buttons {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+
+    .category-btn {
+
+        width: 100%;
+
+        padding:
+            0
+            5px;
+
+        font-size: 8px;
+    }
+
+
+    .image-frame {
+
+        height: 58vh;
+
+        min-height: 360px;
+
+        border-radius: 12px;
+    }
+
+
+    .gallery-controls {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 8px;
+    }
+
+
+    .control-btn {
+
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    .control-btn:nth-child(2) {
+
+        grid-column:
+            1 / -1;
+
+        order: 3;
+    }
+
+
+    .page-btn {
+
+        min-width: 85px;
+
+        height: 38px;
+
+        font-size: 8px;
+    }
+
+}

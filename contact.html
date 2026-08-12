@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CHANDU — Contact</title>
+
+    <link rel="stylesheet" href="contact.css">
+
+</head>
+
+
+<body>
+
+
+<main class="contact-page">
+
+
+    <!-- =====================================
+         PROFILE
+    ====================================== -->
+
+    <section class="profile-card">
+
+        <img
+            src="assets/profile.jpg"
+            alt="Chandu"
+            class="profile-image"
+        >
+
+
+        <h1>
+            CHANDU
+        </h1>
+
+
+        <p class="profile-role">
+            VISUAL MERCHANDISER
+        </p>
+
+
+        <div class="contact-details">
+
+            <a href="tel:+917093489320">
+                +91 7093489320
+            </a>
+
+
+            <a href="mailto:chandur9989@gmail.com">
+                chandur9989@gmail.com
+            </a>
+
+        </div>
+
+
+        <!-- SOCIAL -->
+
+        <div class="social-links">
+
+            <a
+                href="https://wa.me/917093489320"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                WhatsApp
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+
+
+            <a
+                href="https://github.com/nandu-998"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PORTFOLIO SHARE
+    ====================================== -->
+
+    <section class="share-card">
+
+        <span class="section-label">
+            PORTFOLIO
+        </span>
+
+
+        <h2>
+            Share My Portfolio
+        </h2>
+
+
+        <p>
+            Share the portfolio using the link below.
+        </p>
+
+
+        <div class="share-box">
+
+            <input
+                type="text"
+                id="portfolioLink"
+                value="https://nandu-998.github.io/portfolio/"
+                readonly
+            >
+
+
+            <button
+                type="button"
+                id="copyLinkBtn"
+            >
+                COPY
+            </button>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="shareBtn"
+            class="share-button"
+        >
+            SHARE PORTFOLIO
+        </button>
+
+
+        <!-- QR -->
+
+        <div class="qr-box">
+
+            <div id="qrcode"></div>
+
+            <p>
+                Scan to view portfolio
+            </p>
+
+        </div>
+
+    </section>
+
+<!-- =========================================
+     RESUME
+========================================= -->
+
+<section class="resume-card">
+
+    <p class="section-label">
+        RESUME
+    </p>
+
+    <h2>
+        Resume Center
+    </h2>
+
+    <p class="resume-description">
+        View or download my latest professional resume.
+    </p>
+
+    <div class="resume-buttons">
+
+        <!-- VIEW RESUME -->
+
+        <a
+            href="assets/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="resume-btn"
+        >
+            VIEW RESUME
+        </a>
+
+
+        <!-- DOWNLOAD RESUME -->
+
+        <a
+            href="assets/resume.pdf"
+            download="CHANDU-Resume.pdf"
+            class="resume-btn"
+        >
+            DOWNLOAD RESUME
+        </a>
+
+    </div>
+
+</section>
+
+    <!-- =====================================
+         FEEDBACK
+    ====================================== -->
+
+    <section class="feedback-card">
+
+        <span class="section-label">
+            FEEDBACK
+        </span>
+
+
+        <h2>
+            Help Me Improve
+        </h2>
+
+
+        <p>
+            Your feedback helps improve my portfolio
+            and visual merchandising presentation.
+        </p>
+
+
+        <form id="feedbackForm">
+
+
+            <label for="feedbackName">
+                YOUR NAME
+            </label>
+
+            <input
+                type="text"
+                id="feedbackName"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label for="feedbackEmail">
+                YOUR EMAIL
+            </label>
+
+            <input
+                type="email"
+                id="feedbackEmail"
+                name="email"
+                placeholder="your@email.com"
+                required
+            >
+
+
+            <label for="feedbackBrand">
+                BRAND / COMPANY
+            </label>
+
+            <input
+                type="text"
+                id="feedbackBrand"
+                name="brand"
+                placeholder="Brand or company name"
+            >
+
+
+            <label for="feedbackMessage">
+                FEEDBACK
+            </label>
+
+            <textarea
+                id="feedbackMessage"
+                name="message"
+                rows="6"
+                placeholder="What can I improve?"
+                required
+            ></textarea>
+
+
+            <button
+                type="submit"
+                class="submit-button"
+            >
+                SEND FEEDBACK
+            </button>
+
+
+            <p
+                id="feedbackStatus"
+                class="feedback-status"
+            ></p>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- =====================================
+         NAVIGATION
+    ====================================== -->
+
+    <div class="page-navigation">
+
+        <a
+            href="gallery.html"
+            class="page-btn"
+        >
+            ← PREVIOUS
+        </a>
+
+
+        <span>
+            05 / 05
+        </span>
+
+
+        <a
+            href="index.html"
+            class="page-btn"
+        >
+            HOME →
+        </a>
+
+    </div>
+
+
+</main>
+
+
+<!-- QR CODE LIBRARY -->
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+</script>
+
+
+<script src="contact.js"></script>
+
+
+</body>
+
+</html>

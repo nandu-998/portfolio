@@ -1,0 +1,1322 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #101a35 0%,
+            #070b16 45%,
+            #03050a 100%
+        );
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background-glow {
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 35%;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(25, 95, 255, 0.12),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+
+/* =====================================================
+   BOOK WRAPPER
+===================================================== */
+
+.book-wrapper {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        40px
+        30px
+        60px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+}
+
+
+
+/* =====================================================
+   BOOK
+===================================================== */
+
+.book {
+
+    position: relative;
+
+    width: min(1180px, 94vw);
+
+    /*
+       IMPORTANT:
+       Do NOT give the book a small fixed height.
+       Page 2 needs to grow with content.
+    */
+
+    min-height: 760px;
+
+    perspective: 2200px;
+
+    transform-style: preserve-3d;
+}
+
+
+
+/* =====================================================
+   COMMON PAGE
+===================================================== */
+
+.book-page {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 760px;
+
+    height: auto;
+
+    padding: 65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d1424 0%,
+            #080d18 55%,
+            #050914 100%
+        );
+
+    border:
+        1px solid
+        rgba(45, 112, 255, 0.65);
+
+    border-radius: 5px;
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(0, 0, 0, 0.55),
+
+        0 0 35px
+        rgba(30, 90, 255, 0.08),
+
+        inset 0 0 50px
+        rgba(30, 90, 255, 0.035);
+
+    overflow: visible;
+
+    backface-visibility: visible;
+
+    transform-style: preserve-3d;
+}
+
+
+
+/* =====================================================
+   BOOK EDGE
+===================================================== */
+
+.book-page::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 12px;
+    bottom: 12px;
+
+    width: 3px;
+
+    right: -4px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(255,255,255,0.15),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   PAGE NUMBER
+===================================================== */
+
+.page-number {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 35px;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #3d80ff;
+
+    font-weight: 700;
+}
+
+
+
+/* =====================================================
+   PAGE 1
+===================================================== */
+
+.page-one {
+
+    min-height: 760px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+
+/* =====================================================
+   PAGE 1 LEFT
+===================================================== */
+
+.page-one-left {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+}
+
+
+.small-label {
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #3f82ff;
+
+    font-weight: 700;
+
+    margin-bottom: 22px;
+}
+
+
+.main-name {
+
+    font-size:
+        clamp(
+            64px,
+            8vw,
+            120px
+        );
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    font-weight: 900;
+
+    color: #ffffff;
+
+    margin-bottom: 25px;
+}
+
+
+.main-role {
+
+    font-size:
+        clamp(
+            20px,
+            2.5vw,
+            32px
+        );
+
+    font-weight: 400;
+
+    color: #cfd6e5;
+
+    margin-bottom: 12px;
+}
+
+
+.location {
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    color: #6e7890;
+}
+
+
+
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
+
+.next-button {
+
+    margin-top: 100px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.next-button span {
+
+    color: #3d82ff;
+
+    margin-left: 10px;
+
+    font-size: 18px;
+}
+
+
+.next-button:hover {
+
+    color: #3d82ff;
+
+    transform:
+        translateX(6px);
+}
+
+
+
+/* =====================================================
+   PAGE 1 RIGHT
+===================================================== */
+
+.page-one-right {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.profile-frame {
+
+    width:
+        min(
+            390px,
+            100%
+        );
+
+    aspect-ratio: 4 / 5;
+
+    padding: 12px;
+
+    border:
+        1px solid
+        rgba(65, 125, 255, 0.35);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 60, 120, 0.22),
+            rgba(0, 0, 0, 0.15)
+        );
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.5);
+}
+
+
+.profile-image {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 2px;
+}
+
+
+
+/* =====================================================
+   PAGE 2
+===================================================== */
+
+.page-two {
+
+    /*
+       This is the important fix.
+       Page 2 is allowed to become taller.
+    */
+
+    min-height: 760px;
+
+    height: auto;
+
+    padding:
+        70px
+        80px
+        55px;
+
+    overflow: visible;
+
+    display: block;
+}
+
+
+
+/* =====================================================
+   ABOUT PAGE
+===================================================== */
+
+.about-page {
+
+    width: 100%;
+
+    min-height: 630px;
+
+    height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    overflow: visible;
+}
+
+
+
+/* =====================================================
+   ABOUT HEADER
+===================================================== */
+
+.about-header {
+
+    width: 100%;
+
+    margin-bottom: 45px;
+}
+
+
+.about-header h1 {
+
+    font-size:
+        clamp(
+            55px,
+            7vw,
+            95px
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 20px;
+
+    color: #ffffff;
+}
+
+
+.about-header h2 {
+
+    font-size:
+        clamp(
+            26px,
+            3vw,
+            42px
+        );
+
+    color: #ffffff;
+
+    letter-spacing: 1px;
+}
+
+
+.header-line {
+
+    width: 90px;
+
+    height: 2px;
+
+    background: #2775ff;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 0 12px
+        rgba(39, 117, 255, 0.6);
+}
+
+
+
+/* =====================================================
+   ABOUT CONTENT
+===================================================== */
+
+.about-content {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    color: #cbd2df;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    overflow: visible;
+}
+
+
+.about-content p {
+
+    margin-bottom: 24px;
+}
+
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.about-skills {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    width: 100%;
+
+    max-width: 900px;
+}
+
+
+.skill-item {
+
+    min-height: 58px;
+
+    padding:
+        16px
+        20px;
+
+    border:
+        1px solid
+        rgba(50, 110, 255, 0.35);
+
+    background:
+        rgba(10, 18, 35, 0.65);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #e6eaf2;
+
+    font-size: 13px;
+
+    letter-spacing: 0.5px;
+}
+
+
+.skill-item span {
+
+    color: #347cff;
+
+    font-weight: 700;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* =====================================================
+   PAGE 2 NAVIGATION
+===================================================== */
+
+.page-two-navigation {
+
+    width: 100%;
+
+    margin-top: 55px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(60, 110, 200, 0.25);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.navigation-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 145px;
+
+    min-height: 48px;
+
+    padding:
+        12px
+        20px;
+
+    background: transparent;
+
+    border:
+        1px solid
+        rgba(50, 115, 255, 0.65);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.navigation-button:hover {
+
+    background:
+        rgba(35, 100, 255, 0.15);
+
+    border-color:
+        #3e82ff;
+
+    transform:
+        translateY(-2px);
+}
+
+
+.page-counter {
+
+    color: #7f899e;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    font-weight: 700;
+}
+
+
+.page-counter::first-letter {
+
+    color: #3d82ff;
+}
+
+
+
+/* =====================================================
+   PAGE 2 HIDDEN STATE
+===================================================== */
+
+.page-two {
+
+    display: none;
+}
+
+
+.page-two.show {
+
+    display: block;
+}
+
+
+
+/* =====================================================
+   PAGE 1 HIDE
+===================================================== */
+
+.page-one.hide {
+
+    display: none;
+}
+
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .book-wrapper {
+
+        padding:
+            25px
+            18px
+            45px;
+    }
+
+
+    .book {
+
+        width: 96vw;
+
+        min-height: auto;
+    }
+
+
+    .book-page {
+
+        padding:
+            50px
+            45px;
+    }
+
+
+    .page-one {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 50px;
+
+        min-height: auto;
+    }
+
+
+    .page-one-left {
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .page-one-right {
+
+        order: -1;
+    }
+
+
+    .profile-frame {
+
+        width: 320px;
+    }
+
+
+    .next-button {
+
+        margin-top: 50px;
+    }
+
+
+    .page-two {
+
+        min-height: auto;
+
+        padding:
+            50px
+            45px;
+    }
+
+
+    .about-page {
+
+        min-height: auto;
+    }
+
+
+    .about-skills {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .book-wrapper {
+
+        padding:
+            15px
+            10px
+            30px;
+    }
+
+
+    .book {
+
+        width: 96vw;
+    }
+
+
+    .book-page {
+
+        padding:
+            40px
+            25px;
+    }
+
+
+    .page-number {
+
+        top: 18px;
+
+        right: 20px;
+
+        font-size: 9px;
+    }
+
+
+    .page-one {
+
+        min-height: auto;
+
+        gap: 35px;
+    }
+
+
+    .profile-frame {
+
+        width: 100%;
+
+        max-width: 290px;
+    }
+
+
+    .main-name {
+
+        font-size: 58px;
+
+        letter-spacing: -3px;
+    }
+
+
+    .main-role {
+
+        font-size: 20px;
+    }
+
+
+    .next-button {
+
+        margin-top: 40px;
+    }
+
+
+    .page-two {
+
+        padding:
+            45px
+            25px;
+    }
+
+
+    .about-header {
+
+        margin-bottom: 30px;
+    }
+
+
+    .about-header h1 {
+
+        font-size: 55px;
+
+        letter-spacing: -3px;
+    }
+
+
+    .about-content {
+
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+
+    .skill-item {
+
+        font-size: 12px;
+
+        padding: 14px;
+    }
+
+
+    .page-two-navigation {
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+
+        justify-content: center;
+    }
+
+
+    .page-counter {
+
+        order: -1;
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .navigation-button {
+
+        min-width: 125px;
+
+        font-size: 9px;
+    }
+
+}
+
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .book-page {
+
+        padding:
+            35px
+            18px;
+    }
+
+
+    .main-name {
+
+        font-size: 48px;
+    }
+
+
+    .about-header h1 {
+
+        font-size: 45px;
+    }
+
+
+    .about-content {
+
+        font-size: 14px;
+    }
+
+}
+
+/* =====================================================
+   EXPERIENCE PAGE
+===================================================== */
+
+.experience-page {
+
+    min-height: 760px;
+
+    height: auto;
+
+    padding:
+        65px
+        75px
+        45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: visible;
+}
+
+
+/* HEADER */
+
+.experience-header {
+
+    margin-bottom: 45px;
+}
+
+
+.experience-header h1 {
+
+    font-size:
+        clamp(
+            55px,
+            7vw,
+            95px
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 15px;
+
+    color: #ffffff;
+}
+
+
+.experience-subtitle {
+
+    color: #9ba6ba;
+
+    font-size: 16px;
+
+    letter-spacing: 0.5px;
+}
+
+
+
+/* EXPERIENCE CONTENT */
+
+.experience-content {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+/* EXPERIENCE ITEM */
+
+.experience-item {
+
+    display: grid;
+
+    grid-template-columns:
+        150px
+        1fr;
+
+    gap: 35px;
+
+    padding:
+        28px
+        30px;
+
+    border:
+        1px solid
+        rgba(50, 110, 255, 0.35);
+
+    background:
+        rgba(8, 15, 30, 0.65);
+
+    box-shadow:
+        inset 0 0 30px
+        rgba(30, 80, 180, 0.03);
+}
+
+
+.experience-year {
+
+    color: #3d82ff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    padding-top: 5px;
+}
+
+
+.experience-brand {
+
+    color: #3d82ff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 8px;
+}
+
+
+.experience-main h2 {
+
+    font-size:
+        clamp(
+            24px,
+            3vw,
+            38px
+        );
+
+    color: #ffffff;
+
+    margin-bottom: 8px;
+}
+
+
+.experience-location {
+
+    color: #8995aa;
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
+}
+
+
+.experience-description {
+
+    max-width: 760px;
+
+    color: #c7cfdd;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+
+/* SKILLS */
+
+.experience-points {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 20px;
+}
+
+
+.experience-points span {
+
+    padding:
+        8px
+        12px;
+
+    border:
+        1px solid
+        rgba(55, 120, 255, 0.35);
+
+    color: #b9c4d8;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+
+/* CAREER TRACK */
+
+.career-track {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+
+.career-step {
+
+    padding:
+        15px;
+
+    border:
+        1px solid
+        rgba(55, 120, 255, 0.3);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.career-step span {
+
+    color: #3d82ff;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.career-step strong {
+
+    color: #e8edf5;
+
+    font-size: 12px;
+}
+
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .experience-page {
+
+        padding:
+            45px
+            25px
+            35px;
+    }
+
+
+    .experience-item {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding: 22px;
+    }
+
+
+    .career-track {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .experience-header h1 {
+
+        font-size: 52px;
+    }
+
+
+    .experience-description {
+
+        font-size: 14px;
+    }
+
+}

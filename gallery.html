@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>CHANDU — VM Gallery</title>
+
+    <link
+        rel="stylesheet"
+        href="gallery.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<main class="gallery-page">
+
+
+    <!-- =====================================
+         HEADER
+    ====================================== -->
+
+    <header class="gallery-header">
+
+        <p class="small-label">
+            
+        </p>
+
+        <h1>
+            VM GALLERY
+        </h1>
+
+        <p class="subtitle">
+            Planogram • Display • Mannequin Styling • NSO
+        </p>
+
+    </header>
+
+
+
+    <!-- =====================================
+         CATEGORY BUTTONS
+    ====================================== -->
+
+    <nav class="category-buttons">
+
+        <button
+            type="button"
+            class="category-btn active"
+            data-category="planogram"
+        >
+            PLANOGRAM
+        </button>
+
+
+        <button
+            type="button"
+            class="category-btn"
+            data-category="display"
+        >
+            DISPLAY
+        </button>
+
+
+        <button
+            type="button"
+            class="category-btn"
+            data-category="mannequin"
+        >
+            MANNEQUIN STYLING
+        </button>
+
+
+        <button
+            type="button"
+            class="category-btn"
+            data-category="nso"
+        >
+            NSO
+        </button>
+
+    </nav>
+
+
+
+    <!-- =====================================
+         IMAGE VIEWER
+    ====================================== -->
+
+    <section class="gallery-viewer">
+
+
+        <div class="image-number">
+
+            <span id="currentNumber">
+                01
+            </span>
+
+            <span>
+                /
+            </span>
+
+            <span id="totalNumber">
+                07
+            </span>
+
+        </div>
+
+
+        <div class="image-frame">
+
+            <div
+                class="image-loading"
+                id="imageLoading"
+            >
+                LOADING...
+            </div>
+
+
+            <img
+                id="galleryImage"
+                src="assets/p1.jpeg"
+                alt="Planogram 01"
+                decoding="async"
+            >
+
+        </div>
+
+
+        <div
+            class="image-title"
+            id="imageTitle"
+        >
+            PLANOGRAM 01
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================
+         CONTROLS
+    ====================================== -->
+
+    <div class="gallery-controls">
+
+        <button
+            type="button"
+            id="previousImage"
+            class="control-btn"
+        >
+            ← PREVIOUS
+        </button>
+
+
+        <button
+            type="button"
+            id="fullscreenImage"
+            class="control-btn"
+        >
+            ⛶ FULL SCREEN
+        </button>
+
+
+        <button
+            type="button"
+            id="nextImage"
+            class="control-btn"
+        >
+            NEXT →
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================================
+         PAGE NAVIGATION
+    ====================================== -->
+
+    <div class="page-navigation">
+
+
+        <a
+            href="experience.html"
+            class="page-btn"
+        >
+            ← PREVIOUS
+        </a>
+
+
+        <span class="page-counter">
+            04 / 05
+        </span>
+
+
+        <a
+            href="contact.html"
+            class="page-btn"
+        >
+            NEXT →
+        </a>
+
+
+    </div>
+
+
+</main>
+
+
+
+<script src="gallery.js"></script>
+
+</body>
+
+</html>
