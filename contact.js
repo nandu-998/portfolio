@@ -1,373 +1,362 @@
-/* =====================================================
-   CONTACT PAGE JAVASCRIPT
-===================================================== */
+/* =========================================================
+   CHANDU CONTACT PAGE
+========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
-
-
-    /* =================================================
-       PORTFOLIO LINK
-    ================================================= */
-
-    const portfolioURL =
-        "https://nandu-998.github.io/portfolio/";
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
 
-    const portfolioLink =
-        document.getElementById("portfolioLink");
+        /* =====================================
+           PORTFOLIO LINK
+        ====================================== */
+
+        const portfolioLink =
+            "https://nandu-998.github.io/portfolio/";
 
 
-    const copyLinkBtn =
-        document.getElementById("copyLinkBtn");
+        /* =====================================
+           COPY LINK
+        ====================================== */
+
+        const copyButton =
+            document.getElementById(
+                "copyLinkBtn"
+            );
 
 
-    if (portfolioLink) {
-        portfolioLink.value = portfolioURL;
-    }
+        if (copyButton) {
+
+            copyButton.addEventListener(
+                "click",
+                async () => {
+
+                    try {
+
+                        await navigator.clipboard.writeText(
+                            portfolioLink
+                        );
+
+                        copyButton.textContent =
+                            "COPIED ✓";
 
 
-    /* =================================================
-       COPY LINK
-    ================================================= */
+                        setTimeout(
+                            () => {
 
-    if (copyLinkBtn) {
+                                copyButton.textContent =
+                                    "COPY";
 
-        copyLinkBtn.addEventListener("click", async function () {
+                            },
+                            1800
+                        );
 
-            try {
+                    } catch (error) {
 
-                await navigator.clipboard.writeText(
-                    portfolioURL
-                );
+                        /* Fallback */
 
-                copyLinkBtn.textContent = "COPIED ✓";
+                        const input =
+                            document.getElementById(
+                                "portfolioLink"
+                            );
 
-                setTimeout(function () {
+                        input.select();
 
-                    copyLinkBtn.textContent = "COPY LINK";
+                        document.execCommand(
+                            "copy"
+                        );
 
-                }, 1800);
+                        copyButton.textContent =
+                            "COPIED ✓";
 
-            } catch (error) {
+                    }
 
-                portfolioLink.select();
+                }
+            );
 
-                document.execCommand("copy");
-
-                copyLinkBtn.textContent = "COPIED ✓";
-
-                setTimeout(function () {
-
-                    copyLinkBtn.textContent = "COPY LINK";
-
-                }, 1800);
-
-            }
-
-        });
-
-    }
+        }
 
 
+        /* =====================================
+           SHARE
+        ====================================== */
 
-    /* =================================================
-       QR CODE
-    ================================================= */
-
-    const qrContainer =
-        document.getElementById("qrcode");
-
-
-    if (qrContainer) {
-
-        qrContainer.innerHTML = "";
+        const shareButton =
+            document.getElementById(
+                "shareBtn"
+            );
 
 
-        if (typeof QRCode !== "undefined") {
+        if (shareButton) {
 
-            new QRCode(qrContainer, {
+            shareButton.addEventListener(
+                "click",
+                async () => {
 
-                text: portfolioURL,
+                    if (
+                        navigator.share
+                    ) {
 
-                width: 230,
+                        try {
 
-                height: 230,
+                            await navigator.share({
 
-                colorDark: "#000000",
+                                title:
+                                    "CHANDU — Visual Merchandising Portfolio",
 
-                colorLight: "#ffffff",
+                                text:
+                                    "View my Visual Merchandising Portfolio.",
 
-                correctLevel: QRCode.CorrectLevel.H
+                                url:
+                                    portfolioLink
 
-            });
+                            });
 
-        } else {
+                        } catch (error) {
 
-            qrContainer.innerHTML =
-                "<p style='color:#000;font-size:12px;text-align:center;'>QR library failed to load</p>";
+                            /* User cancelled share */
+
+                        }
+
+                    } else {
+
+                        try {
+
+                            await navigator.clipboard.writeText(
+                                portfolioLink
+                            );
+
+                            shareButton.textContent =
+                                "LINK COPIED ✓";
+
+
+                            setTimeout(
+                                () => {
+
+                                    shareButton.textContent =
+                                        "SHARE PORTFOLIO";
+
+                                },
+                                1800
+                            );
+
+                        } catch (error) {
+
+                            window.prompt(
+                                "Copy my portfolio link:",
+                                portfolioLink
+                            );
+
+                        }
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /* =====================================
+           QR CODE
+        ====================================== */
+
+        const qrContainer =
+            document.getElementById(
+                "qrcode"
+            );
+
+
+        if (
+            qrContainer &&
+            typeof QRCode !== "undefined"
+        ) {
+
+            qrContainer.innerHTML = "";
+
+
+            new QRCode(
+                qrContainer,
+                {
+
+                    text:
+                        portfolioLink,
+
+                    width:
+                        150,
+
+                    height:
+                        150,
+
+                    colorDark:
+                        "#000000",
+
+                    colorLight:
+                        "#ffffff",
+
+                    correctLevel:
+                        QRCode.CorrectLevel.H
+
+                }
+            );
+
+        }
+
+
+        /* =====================================
+           FEEDBACK FORM
+        ====================================== */
+
+        const feedbackForm =
+            document.getElementById(
+                "feedbackForm"
+            );
+
+
+        const feedbackStatus =
+            document.getElementById(
+                "feedbackStatus"
+            );
+
+
+        if (feedbackForm) {
+
+            feedbackForm.addEventListener(
+                "submit",
+                (event) => {
+
+                    event.preventDefault();
+
+
+                    const name =
+                        document
+                            .getElementById(
+                                "feedbackName"
+                            )
+                            .value
+                            .trim();
+
+
+                    const email =
+                        document
+                            .getElementById(
+                                "feedbackEmail"
+                            )
+                            .value
+                            .trim();
+
+
+                    const brand =
+                        document
+                            .getElementById(
+                                "feedbackBrand"
+                            )
+                            .value
+                            .trim();
+
+
+                    const message =
+                        document
+                            .getElementById(
+                                "feedbackMessage"
+                            )
+                            .value
+                            .trim();
+
+
+                    /* VALIDATION */
+
+                    if (
+                        !name ||
+                        !email ||
+                        !message
+                    ) {
+
+                        feedbackStatus.textContent =
+                            "Please complete all required fields.";
+
+                        return;
+
+                    }
+
+
+                    /* =================================
+                       EMAIL CONTENT
+                    ================================= */
+
+                    const subject =
+                        encodeURIComponent(
+                            "Portfolio Feedback — " +
+                            name
+                        );
+
+
+                    const body =
+                        encodeURIComponent(
+
+                            "Hello Chandu,\n\n" +
+
+                            "I would like to share feedback about your portfolio.\n\n" +
+
+                            "Name: " +
+                            name +
+                            "\n" +
+
+                            "Email: " +
+                            email +
+                            "\n" +
+
+                            "Brand / Company: " +
+                            (
+                                brand ||
+                                "Not provided"
+                            ) +
+                            "\n\n" +
+
+                            "Feedback:\n" +
+                            message +
+                            "\n\n" +
+
+                            "Portfolio:\n" +
+                            portfolioLink
+
+                        );
+
+
+                    /* =================================
+                       OPEN EMAIL
+                    ================================= */
+
+                    window.location.href =
+                        "mailto:chandur9989@gmail.com" +
+                        "?subject=" +
+                        subject +
+                        "&body=" +
+                        body;
+
+
+                    /* =================================
+                       STATUS
+                    ================================= */
+
+                    feedbackStatus.textContent =
+                        "Opening your email app...";
+
+
+                    setTimeout(
+                        () => {
+
+                            feedbackStatus.textContent =
+                                "Please press Send in your email app.";
+
+                        },
+                        1500
+                    );
+
+                }
+            );
 
         }
 
     }
-
-
-
-    /* =================================================
-       FORM ELEMENTS
-    ================================================= */
-
-    const jobChoice =
-        document.getElementById("jobChoice");
-
-
-    const feedbackChoice =
-        document.getElementById("feedbackChoice");
-
-
-    const jobFormSection =
-        document.getElementById("jobFormSection");
-
-
-    const feedbackFormSection =
-        document.getElementById("feedbackFormSection");
-
-
-
-    /* =================================================
-       SHOW JOB FORM
-    ================================================= */
-
-    if (jobChoice) {
-
-        jobChoice.addEventListener("click", function () {
-
-            if (jobFormSection) {
-
-                jobFormSection.classList.remove("hidden");
-
-            }
-
-            if (feedbackFormSection) {
-
-                feedbackFormSection.classList.add("hidden");
-
-            }
-
-            jobFormSection.scrollIntoView({
-
-                behavior: "smooth",
-
-                block: "start"
-
-            });
-
-        });
-
-    }
-
-
-
-    /* =================================================
-       SHOW FEEDBACK FORM
-    ================================================= */
-
-    if (feedbackChoice) {
-
-        feedbackChoice.addEventListener("click", function () {
-
-            if (feedbackFormSection) {
-
-                feedbackFormSection.classList.remove("hidden");
-
-            }
-
-            if (jobFormSection) {
-
-                jobFormSection.classList.add("hidden");
-
-            }
-
-            feedbackFormSection.scrollIntoView({
-
-                behavior: "smooth",
-
-                block: "start"
-
-            });
-
-        });
-
-    }
-
-
-
-    /* =================================================
-       JOB FORM
-    ================================================= */
-
-    const jobForm =
-        document.getElementById("jobForm");
-
-
-    if (jobForm) {
-
-        jobForm.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-
-            const formData =
-                new FormData(jobForm);
-
-
-            const brandName =
-                formData.get("brandName");
-
-
-            const managerName =
-                formData.get("managerName");
-
-
-            const companyEmail =
-                formData.get("companyEmail");
-
-
-            const contactNumber =
-                formData.get("contactNumber");
-
-
-            const jobRole =
-                formData.get("jobRole");
-
-
-            const offerDetails =
-                formData.get("offerDetails");
-
-
-            const subject =
-                encodeURIComponent(
-                    "Job Opportunity — " + jobRole
-                );
-
-
-            const body =
-                encodeURIComponent(
-
-`JOB OPPORTUNITY
-
-Brand / Company:
-${brandName}
-
-HR / Manager:
-${managerName}
-
-Company Email:
-${companyEmail}
-
-Contact Number:
-${contactNumber}
-
-Job Role:
-${jobRole}
-
-Offer / Opportunity Details:
-${offerDetails}
-`
-                );
-
-
-            window.location.href =
-                "mailto:chandur9989@gmail.com?subject="
-                + subject
-                + "&body="
-                + body;
-
-        });
-
-    }
-
-
-
-    /* =================================================
-       FEEDBACK FORM
-    ================================================= */
-
-    const feedbackForm =
-        document.getElementById("feedbackForm");
-
-
-    if (feedbackForm) {
-
-        feedbackForm.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-
-                const formData =
-                    new FormData(feedbackForm);
-
-
-                const brand =
-                    formData.get("feedbackBrand");
-
-
-                const name =
-                    formData.get("feedbackName");
-
-
-                const email =
-                    formData.get("feedbackEmail");
-
-
-                const improvement =
-                    formData.get("improvement");
-
-
-                const additional =
-                    formData.get("additionalFeedback");
-
-
-                const subject =
-                    encodeURIComponent(
-                        "Portfolio Feedback — " + brand
-                    );
-
-
-                const body =
-                    encodeURIComponent(
-
-`PORTFOLIO FEEDBACK
-
-Brand:
-${brand}
-
-Name:
-${name}
-
-Email:
-${email}
-
-What Can Be Improved:
-${improvement}
-
-Additional Feedback:
-${additional}
-`
-                    );
-
-
-                window.location.href =
-                    "mailto:chandur9989@gmail.com?subject="
-                    + subject
-                    + "&body="
-                    + body;
-
-            }
-        );
-
-    }
-
-
-})
+);
