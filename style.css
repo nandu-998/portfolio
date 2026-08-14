@@ -1241,82 +1241,51 @@ body {
 
     margin-top: 22px;
 }
+.skill-item:hover {
+    border-color: #4169e1;
 
+    background: rgba(30, 38, 60, 0.55);
 
-.career-step {
+    box-shadow:
+        0 0 25px rgba(65, 105, 225, 0.35),
+        inset 0 0 15px rgba(65, 105, 225, 0.08);
 
-    padding:
-        15px;
+    transform: translateY(-3px);
+}
+/* =========================
+   SKILLS GLASS CARDS
+   ========================= */
 
-    border:
-        1px solid
-        rgba(55, 120, 255, 0.3);
+.experience-card {
+    padding: 22px 24px;
 
-    display: flex;
+    background: rgba(18, 22, 35, 0.55);
 
-    flex-direction: column;
+    border: 2px solid rgba(65, 105, 225, 0.70);
 
-    gap: 8px;
+    border-radius: 12px;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 0 18px rgba(65, 105, 225, 0.15),
+        inset 0 0 18px rgba(255, 255, 255, 0.03);
+
+    transition: all 0.3s ease;
 }
 
 
-.career-step span {
+/* HOVER */
 
-    color: #3d82ff;
+.experience-card:hover {
+    border-color: #4169e1;
 
-    font-size: 10px;
+    background: rgba(25, 32, 52, 0.70);
 
-    letter-spacing: 2px;
-}
+    box-shadow:
+        0 0 25px rgba(65, 105, 225, 0.35),
+        inset 0 0 18px rgba(65, 105, 225, 0.08);
 
-
-.career-step strong {
-
-    color: #e8edf5;
-
-    font-size: 12px;
-}
-
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .experience-page {
-
-        padding:
-            45px
-            25px
-            35px;
-    }
-
-
-    .experience-item {
-
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-
-        padding: 22px;
-    }
-
-
-    .career-track {
-
-        grid-template-columns: 1fr;
-    }
-
-
-    .experience-header h1 {
-
-        font-size: 52px;
-    }
-
-
-    .experience-description {
-
-        font-size: 14px;
-    }
-
+    transform: translateY(-3px);
 }
