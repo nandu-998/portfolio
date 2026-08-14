@@ -1,141 +1,146 @@
-/* =====================================================
-   PAGE NAVIGATION
-===================================================== */
+/* =========================================
+   CHANDU PORTFOLIO
+   INDEX PAGE JAVASCRIPT
+========================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
 
+    /* =====================================
+       PAGE ELEMENTS
+    ====================================== */
+
     const pageOne =
         document.getElementById("pageOne");
-
 
     const pageTwo =
         document.getElementById("pageTwo");
 
-
     const nextButton =
         document.getElementById("nextButton");
-
 
     const previousButton =
         document.getElementById("previousButton");
 
 
+    /* =====================================
+       OPEN PAGE 02
+    ====================================== */
 
-    /* =================================================
-       OPEN PAGE 2
-    ================================================= */
+    function openAboutPage() {
 
-    function openPageTwo() {
+        pageOne.classList.remove("active");
 
-        pageOne.classList.add("hide");
-
-        pageTwo.classList.add("show");
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }
-
-
-
-    /* =================================================
-       RETURN PAGE 1
-    ================================================= */
-
-    function openPageOne() {
-
-        pageTwo.classList.remove("show");
-
-        pageOne.classList.remove("hide");
+        pageTwo.classList.add("active");
 
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
-
     }
 
 
+    /* =====================================
+       OPEN PAGE 01
+    ====================================== */
 
-    /* =================================================
+    function openCoverPage() {
+
+        pageTwo.classList.remove("active");
+
+        pageOne.classList.add("active");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+
+    /* =====================================
        BUTTON EVENTS
-    ================================================= */
+    ====================================== */
 
     if (nextButton) {
 
         nextButton.addEventListener(
             "click",
-            openPageTwo
+            openAboutPage
         );
 
     }
-
 
 
     if (previousButton) {
 
         previousButton.addEventListener(
             "click",
-            openPageOne
+            openCoverPage
         );
 
     }
 
 
-
-    /* =================================================
-       KEYBOARD CONTROL
-    ================================================= */
+    /* =====================================
+       KEYBOARD NAVIGATION
+    ====================================== */
 
     document.addEventListener(
         "keydown",
         function (event) {
 
+            if (event.key === "ArrowRight") {
 
-            if (
-                event.key === "ArrowRight" &&
-                !pageOne.classList.contains("hide")
-            ) {
+                if (
+                    pageOne.classList.contains("active")
+                ) {
 
-                openPageTwo();
+                    openAboutPage();
+
+                }
 
             }
 
 
-            if (
-                event.key === "ArrowLeft" &&
-                pageTwo.classList.contains("show")
-            ) {
+            if (event.key === "ArrowLeft") {
 
-                openPageOne();
+                if (
+                    pageTwo.classList.contains("active")
+                ) {
+
+                    openCoverPage();
+
+                }
 
             }
 
         }
     );
-});
-
-/* =========================================
-   PROFESSIONAL NOTE POPUP
-========================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const noteOverlay = document.getElementById("noteOverlay");
-    const noteClose = document.getElementById("noteClose");
-    const noteContinue = document.getElementById("noteContinue");
-
-    if (!noteOverlay) {
-        return;
-    }
 
 
-    /* SHOW POPUP */
+    /* =====================================
+       NOTE POPUP
+    ====================================== */
 
-    setTimeout(function () {
+    const noteOverlay =
+        document.getElementById("noteOverlay");
+
+    const noteClose =
+        document.getElementById("noteClose");
+
+    const noteContinue =
+        document.getElementById("noteContinue");
+
+
+    /* =====================================
+       OPEN POPUP
+    ====================================== */
+
+    function openNote() {
+
+        if (!noteOverlay) {
+            return;
+        }
 
         noteOverlay.classList.add("show");
 
@@ -144,12 +149,20 @@ document.addEventListener("DOMContentLoaded", function () {
             "false"
         );
 
-    }, 700);
+        document.body.style.overflow = "hidden";
+
+    }
 
 
-    /* CLOSE FUNCTION */
+    /* =====================================
+       CLOSE POPUP
+    ====================================== */
 
     function closeNote() {
+
+        if (!noteOverlay) {
+            return;
+        }
 
         noteOverlay.classList.remove("show");
 
@@ -158,10 +171,14 @@ document.addEventListener("DOMContentLoaded", function () {
             "true"
         );
 
+        document.body.style.overflow = "";
+
     }
 
 
-    /* CLOSE BUTTON */
+    /* =====================================
+       POPUP BUTTONS
+    ====================================== */
 
     if (noteClose) {
 
@@ -173,8 +190,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* CONTINUE BUTTON */
-
     if (noteContinue) {
 
         noteContinue.addEventListener(
@@ -185,36 +200,59 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* CLICK OUTSIDE */
+    /* =====================================
+       CLICK OUTSIDE POPUP
+    ====================================== */
 
-    noteOverlay.addEventListener(
-        "click",
+    if (noteOverlay) {
+
+        noteOverlay.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === noteOverlay
+                ) {
+
+                    closeNote();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =====================================
+       ESC KEY CLOSE POPUP
+    ====================================== */
+
+    document.addEventListener(
+        "keydown",
         function (event) {
 
-            if (event.target === noteOverlay) {
+            if (event.key === "Escape") {
+
                 closeNote();
+
             }
 
         }
     );
 
 
-    /* ESC KEY */
+    /* =====================================
+       SHOW POPUP AFTER SHORT DELAY
+    ====================================== */
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
+    setTimeout(
+        function () {
 
-            if (
-                event.key === "Escape" &&
-                noteOverlay.classList.contains("show")
-            ) {
+            openNote();
 
-                closeNote();
-
-            }
-
-        }
+        },
+        900
     );
 
 });
