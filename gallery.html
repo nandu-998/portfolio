@@ -10,6 +10,11 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+    <meta
+        name="description"
+        content="CHANDU Visual Merchandising Portfolio Gallery"
+    >
+
     <title>CHANDU — VM Gallery</title>
 
     <link
@@ -22,7 +27,6 @@
 
 <body>
 
-
 <main class="gallery-page">
 
 
@@ -33,7 +37,7 @@
     <header class="gallery-header">
 
         <p class="small-label">
-            
+            04 — PORTFOLIO
         </p>
 
         <h1>
@@ -52,7 +56,10 @@
          CATEGORY BUTTONS
     ====================================== -->
 
-    <nav class="category-buttons">
+    <nav
+        class="category-buttons"
+        aria-label="Gallery categories"
+    >
 
         <button
             type="button"
@@ -97,8 +104,12 @@
          IMAGE VIEWER
     ====================================== -->
 
-    <section class="gallery-viewer">
+    <section
+        class="gallery-viewer"
+        aria-live="polite"
+    >
 
+        <!-- IMAGE COUNTER -->
 
         <div class="image-number">
 
@@ -117,7 +128,13 @@
         </div>
 
 
-        <div class="image-frame">
+
+        <!-- IMAGE FRAME -->
+
+        <div
+            class="image-frame"
+            id="imageFrame"
+        >
 
             <div
                 class="image-loading"
@@ -132,10 +149,14 @@
                 src="assets/p1.jpeg"
                 alt="Planogram 01"
                 decoding="async"
+                fetchpriority="high"
             >
 
         </div>
 
+
+
+        <!-- TITLE -->
 
         <div
             class="image-title"
@@ -150,10 +171,11 @@
 
 
     <!-- =====================================
-         CONTROLS
+         IMAGE CONTROLS
     ====================================== -->
 
     <div class="gallery-controls">
+
 
         <button
             type="button"
@@ -180,6 +202,7 @@
         >
             NEXT →
         </button>
+
 
     </div>
 
