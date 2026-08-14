@@ -118,3 +118,104 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
 });
+
+/* =========================================
+   PROFESSIONAL NOTE POPUP
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const noteOverlay = document.getElementById("noteOverlay");
+    const noteClose = document.getElementById("noteClose");
+    const noteContinue = document.getElementById("noteContinue");
+
+    if (!noteOverlay) {
+        return;
+    }
+
+
+    /* SHOW POPUP */
+
+    setTimeout(function () {
+
+        noteOverlay.classList.add("show");
+
+        noteOverlay.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+    }, 700);
+
+
+    /* CLOSE FUNCTION */
+
+    function closeNote() {
+
+        noteOverlay.classList.remove("show");
+
+        noteOverlay.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    }
+
+
+    /* CLOSE BUTTON */
+
+    if (noteClose) {
+
+        noteClose.addEventListener(
+            "click",
+            closeNote
+        );
+
+    }
+
+
+    /* CONTINUE BUTTON */
+
+    if (noteContinue) {
+
+        noteContinue.addEventListener(
+            "click",
+            closeNote
+        );
+
+    }
+
+
+    /* CLICK OUTSIDE */
+
+    noteOverlay.addEventListener(
+        "click",
+        function (event) {
+
+            if (event.target === noteOverlay) {
+                closeNote();
+            }
+
+        }
+    );
+
+
+    /* ESC KEY */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                noteOverlay.classList.contains("show")
+            ) {
+
+                closeNote();
+
+            }
+
+        }
+    );
+
+});
