@@ -1289,3 +1289,246 @@ body {
 
     transform: translateY(-3px);
 }
+
+/* =========================================
+   PROFESSIONAL NOTE POPUP
+========================================= */
+
+.note-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(2, 6, 15, 0.82);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.note-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* POPUP */
+
+.note-popup {
+    position: relative;
+
+    width: min(620px, 100%);
+
+    padding: 42px 42px 38px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(9, 19, 38, 0.98),
+            rgba(3, 9, 20, 0.98)
+        );
+
+    border: 1px solid rgba(30, 115, 255, 0.65);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 0 1px rgba(30, 115, 255, 0.08),
+        0 25px 80px rgba(0, 0, 0, 0.55),
+        0 0 45px rgba(0, 90, 255, 0.16);
+
+    transform: translateY(20px) scale(0.97);
+
+    transition:
+        transform 0.4s ease;
+}
+
+.note-overlay.show .note-popup {
+    transform: translateY(0) scale(1);
+}
+
+
+/* CLOSE */
+
+.note-close {
+    position: absolute;
+
+    top: 14px;
+    right: 16px;
+
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: #ffffff;
+
+    font-size: 24px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.note-close:hover {
+    background: rgba(30, 115, 255, 0.18);
+
+    border-color: #1e73ff;
+
+    transform: rotate(90deg);
+}
+
+
+/* LABEL */
+
+.note-label {
+    margin: 0 0 12px;
+
+    color: #2675ff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* HEADING */
+
+.note-popup h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(25px, 4vw, 38px);
+
+    line-height: 1.1;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* BLUE LINE */
+
+.note-line {
+    width: 70px;
+    height: 2px;
+
+    margin: 22px 0;
+
+    background: #2675ff;
+
+    box-shadow:
+        0 0 12px rgba(38, 117, 255, 0.55);
+}
+
+
+/* TEXT */
+
+.note-text {
+    margin: 0 0 16px;
+
+    color: rgba(235, 241, 252, 0.84);
+
+    font-size: 16px;
+
+    line-height: 1.75;
+}
+
+
+/* BUTTON */
+
+.note-continue {
+    margin-top: 12px;
+
+    min-height: 48px;
+
+    padding: 0 22px;
+
+    border: 1px solid #2675ff;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1260ed,
+            #1647c9
+        );
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(20, 85, 220, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.note-continue:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(20, 85, 220, 0.4);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .note-overlay {
+        padding: 16px;
+    }
+
+    .note-popup {
+        padding: 34px 24px 28px;
+
+        border-radius: 15px;
+    }
+
+    .note-popup h2 {
+        font-size: 26px;
+    }
+
+    .note-text {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .note-continue {
+        width: 100%;
+    }
+
+}
+
+
