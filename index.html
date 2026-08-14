@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -10,192 +9,836 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>CHANDU — Visual Merchandiser</title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
-</head>
-
-
-<body>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-
     <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
+        name="description"
+        content="CHANDU — Visual Merchandiser Portfolio"
     >
 
     <title>CHANDU — Visual Merchandiser</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <style>
+
+        /* =========================================
+           RESET
+        ========================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    #111b35 0%,
+                    #080d1b 45%,
+                    #03060d 100%
+                );
+
+            color: #ffffff;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        button,
+        a {
+            font: inherit;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================================
+           BACKGROUND
+        ========================================== */
+
+        .background-glow {
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            top: -250px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            background: rgba(45, 91, 190, 0.12);
+
+            filter: blur(100px);
+
+            pointer-events: none;
+
+            z-index: 0;
+        }
+
+
+        /* =========================================
+           BOOK WRAPPER
+        ========================================== */
+
+        .book-wrapper {
+            width: 100%;
+            min-height: 100vh;
+
+            padding: 24px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+            z-index: 1;
+        }
+
+
+        /* =========================================
+           BOOK
+        ========================================== */
+
+        .book {
+            width: min(1180px, 100%);
+
+            min-height: 720px;
+
+            position: relative;
+
+            border: 1px solid rgba(67, 111, 220, 0.65);
+
+            border-radius: 4px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(11, 19, 37, 0.98),
+                    rgba(4, 8, 17, 0.98)
+                );
+
+            box-shadow:
+                0 35px 90px rgba(0, 0, 0, 0.55),
+                inset 0 0 60px rgba(40, 80, 160, 0.04);
+
+            overflow: hidden;
+        }
+
+
+        /* =========================================
+           PAGES
+        ========================================== */
+
+        .book-page {
+            width: 100%;
+            min-height: 720px;
+
+            display: none;
+
+            position: relative;
+        }
+
+
+        .book-page.active {
+            display: block;
+        }
+
+
+        /* =========================================
+           PAGE NUMBER
+        ========================================== */
+
+        .page-number {
+            position: absolute;
+
+            top: 22px;
+            right: 30px;
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            color: #4c82e8;
+        }
+
+
+        /* =========================================
+           SMALL LABEL
+        ========================================== */
+
+        .small-label {
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            color: #6f9eff;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================
+           PAGE 1
+        ========================================== */
+
+        .page-one {
+            display: none;
+
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            padding: 70px;
+        }
+
+
+        .page-one.active {
+            display: grid;
+        }
+
+
+        /* =========================================
+           PAGE 1 LEFT
+        ========================================== */
+
+        .page-one-left {
+            padding-right: 50px;
+        }
+
+
+        .main-name {
+            margin-top: 25px;
+
+            font-size: clamp(70px, 9vw, 145px);
+
+            line-height: 0.85;
+
+            letter-spacing: -7px;
+
+            font-weight: 800;
+
+            color: #ffffff;
+        }
+
+
+        .main-role {
+            margin-top: 30px;
+
+            font-size: clamp(22px, 3vw, 38px);
+
+            font-weight: 400;
+
+            color: #d5dbea;
+        }
+
+
+        .location {
+            margin-top: 14px;
+
+            color: #7d879d;
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================
+           NEXT BUTTON
+        ========================================== */
+
+        .next-button,
+        .navigation-button {
+            border: 1px solid #315fc5;
+
+            background: transparent;
+
+            color: #ffffff;
+
+            cursor: pointer;
+
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        .next-button {
+            margin-top: 80px;
+
+            padding: 14px 24px;
+
+            min-width: 140px;
+
+            font-size: 11px;
+
+            letter-spacing: 3px;
+        }
+
+
+        .next-button span {
+            margin-left: 15px;
+
+            color: #6395ff;
+        }
+
+
+        .next-button:hover,
+        .navigation-button:hover {
+            background: rgba(48, 95, 198, 0.15);
+
+            border-color: #6797ff;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           PAGE 1 RIGHT
+        ========================================== */
+
+        .page-one-right {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .profile-frame {
+            width: min(450px, 100%);
+
+            aspect-ratio: 4 / 5;
+
+            padding: 12px;
+
+            border: 1px solid rgba(91, 135, 232, 0.45);
+
+            background: rgba(255, 255, 255, 0.02);
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.45);
+        }
+
+
+        .profile-image {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            background: #111827;
+        }
+
+
+        /* =========================================
+           PAGE 2
+        ========================================== */
+
+        .page-two {
+            padding: 75px 90px 40px;
+        }
+
+
+        .about-page {
+            width: 100%;
+            min-height: 620px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* =========================================
+           ABOUT HEADER
+        ========================================== */
+
+        .about-header {
+            max-width: 800px;
+        }
+
+
+        .about-header h1 {
+            margin-top: 18px;
+
+            font-size: clamp(42px, 6vw, 80px);
+
+            line-height: 1;
+
+            letter-spacing: -3px;
+        }
+
+
+        .header-line {
+            width: 100%;
+
+            height: 1px;
+
+            margin-top: 25px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #3e73df,
+                    transparent
+                );
+        }
+
+
+        .about-header h2 {
+            margin-top: 20px;
+
+            font-size: clamp(18px, 2vw, 28px);
+
+            font-weight: 400;
+
+            color: #8daeff;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================================
+           ABOUT CONTENT
+        ========================================== */
+
+        .about-content {
+            width: min(800px, 100%);
+
+            margin-top: 55px;
+        }
+
+
+        .about-content p {
+            margin-bottom: 28px;
+
+            font-size: 18px;
+
+            line-height: 1.9;
+
+            color: #c4cad8;
+        }
+
+
+        /* =========================================
+           PAGE NAVIGATION
+        ========================================== */
+
+        .page-two-navigation {
+            width: 100%;
+
+            margin-top: auto;
+            padding-top: 35px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+            border-top: 1px solid rgba(65, 105, 190, 0.22);
+        }
+
+
+        .navigation-button {
+            display: inline-flex;
+
+            justify-content: center;
+            align-items: center;
+
+            min-width: 135px;
+
+            padding: 13px 18px;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .page-counter {
+            font-size: 11px;
+
+            letter-spacing: 5px;
+
+            color: #6c8fdc;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           TABLET
+        ========================================== */
+
+        @media (max-width: 900px) {
+
+            .book-wrapper {
+                padding: 15px;
+            }
+
+
+            .book {
+                min-height: auto;
+            }
+
+
+            .book-page {
+                min-height: 680px;
+            }
+
+
+            .page-one {
+                padding: 55px;
+            }
+
+
+            .main-name {
+                font-size: clamp(60px, 10vw, 100px);
+            }
+
+
+            .page-two {
+                padding: 60px 55px 35px;
+            }
+
+
+            .about-content p {
+                font-size: 17px;
+            }
+
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================== */
+
+        @media (max-width: 600px) {
+
+            body {
+                background:
+                    linear-gradient(
+                        180deg,
+                        #080e1d,
+                        #03060d
+                    );
+            }
+
+
+            .book-wrapper {
+                width: 100%;
+
+                min-height: 100vh;
+
+                padding: 10px;
+            }
+
+
+            .book {
+                width: 100%;
+
+                min-height: 0;
+
+                border-radius: 3px;
+            }
+
+
+            .book-page {
+                width: 100%;
+
+                min-height: 0;
+
+                height: auto;
+            }
+
+
+            /* -----------------------------------------
+               PAGE 1 MOBILE
+            ------------------------------------------ */
+
+            .page-one {
+                min-height: calc(100vh - 20px);
+
+                display: none;
+
+                grid-template-columns: 1fr;
+
+                grid-template-rows: auto auto;
+
+                gap: 35px;
+
+                padding: 55px 24px 30px;
+
+                align-content: center;
+            }
+
+
+            .page-one.active {
+                display: grid;
+            }
+
+
+            .page-number {
+                top: 18px;
+                right: 20px;
+
+                font-size: 9px;
+
+                letter-spacing: 3px;
+            }
+
+
+            .page-one-left {
+                padding-right: 0;
+
+                text-align: center;
+
+                order: 2;
+            }
+
+
+            .page-one-right {
+                order: 1;
+
+                width: 100%;
+            }
+
+
+            .profile-frame {
+                width: min(270px, 78vw);
+
+                margin: 0 auto;
+
+                padding: 7px;
+            }
+
+
+            .main-name {
+                margin-top: 18px;
+
+                font-size: clamp(55px, 18vw, 90px);
+
+                letter-spacing: -4px;
+
+                line-height: 0.9;
+            }
+
+
+            .main-role {
+                margin-top: 18px;
+
+                font-size: 21px;
+
+                line-height: 1.25;
+            }
+
+
+            .location {
+                margin-top: 10px;
+
+                font-size: 12px;
+            }
+
+
+            .next-button {
+                margin-top: 30px;
+
+                padding: 13px 22px;
+            }
+
+
+            /* -----------------------------------------
+               PAGE 2 MOBILE
+            ------------------------------------------ */
+
+            .page-two {
+                min-height: calc(100vh - 20px);
+
+                padding: 55px 24px 25px;
+            }
+
+
+            .about-page {
+                min-height: calc(100vh - 100px);
+            }
+
+
+            .about-header h1 {
+                font-size: 48px;
+
+                letter-spacing: -2px;
+            }
+
+
+            .about-header h2 {
+                font-size: 17px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .about-content {
+                margin-top: 35px;
+            }
+
+
+            .about-content p {
+                margin-bottom: 22px;
+
+                font-size: 15px;
+
+                line-height: 1.7;
+            }
+
+
+            .page-two-navigation {
+                margin-top: 35px;
+
+                padding-top: 25px;
+
+                display: grid;
+
+                grid-template-columns: 1fr 1fr;
+
+                grid-template-areas:
+                    "counter counter"
+                    "previous next";
+
+                gap: 12px;
+            }
+
+
+            .page-counter {
+                grid-area: counter;
+
+                text-align: center;
+
+                margin-bottom: 5px;
+            }
+
+
+            .page-two-navigation .navigation-button:first-child {
+                grid-area: previous;
+            }
+
+
+            .page-two-navigation .navigation-button:last-child {
+                grid-area: next;
+            }
+
+
+            .navigation-button {
+                width: 100%;
+
+                min-width: 0;
+
+                padding: 13px 8px;
+
+                font-size: 9px;
+            }
+
+        }
+
+
+        /* =========================================
+           VERY SMALL PHONES
+        ========================================== */
+
+        @media (max-width: 380px) {
+
+            .page-one {
+                padding-left: 18px;
+                padding-right: 18px;
+
+                gap: 25px;
+            }
+
+
+            .profile-frame {
+                width: 220px;
+            }
+
+
+            .main-name {
+                font-size: 55px;
+            }
+
+
+            .main-role {
+                font-size: 18px;
+            }
+
+
+            .about-content p {
+                font-size: 14px;
+
+                line-height: 1.65;
+            }
+
+        }
+
+
+    </style>
 
 </head>
+
 
 <body>
 
 
-    <!-- =================================
-         PROFESSIONAL NOTE POPUP
-         ADD THIS AFTER <body>
-    ================================== -->
-
-    <div
-        class="note-overlay"
-        id="noteOverlay"
-        aria-hidden="true"
-    >
-
-        <div
-            class="note-popup"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="noteTitle"
-        >
-
-            <button
-                type="button"
-                class="note-close"
-                id="noteClose"
-                aria-label="Close note"
-            >
-                ×
-            </button>
-
-            <p class="note-label">
-                A NOTE FROM CHANDU
-            </p>
-
-            <h2 id="noteTitle">
-                MY WORK SPEAKS FOR ME
-            </h2>
-
-            <div class="note-line"></div>
-
-            <p class="note-text">
-                My English may not be perfect, but my work speaks for me.
-                I believe that strong experience, practical skills, smart work,
-                and dedication matter most.
-            </p>
-
-            <p class="note-text">
-                I focus on delivering quality results, solving problems
-                effectively, and creating real value through my work.
-            </p>
-
-            <button
-                type="button"
-                class="note-continue"
-                id="noteContinue"
-            >
-                CONTINUE TO PORTFOLIO →
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- =================================
-         YOUR EXISTING PORTFOLIO
-         STARTS HERE
-    ================================== -->
-
     <div class="background-glow"></div>
+
 
     <main class="book-wrapper">
 
-        <div
-            class="book"
-            id="book"
-        >
 
-            <!-- PAGE 1 -->
+        <div class="book" id="book">
+
+
+            <!-- =====================================
+                 PAGE 01 — COVER
+            ====================================== -->
 
             <section
                 class="book-page page-one active"
                 id="pageOne"
             >
 
-                <!-- your existing Page 1 code -->
-
-            </section>
-
-
-            <!-- PAGE 2 -->
-
-            <section
-                class="book-page page-two"
-                id="pageTwo"
-            >
-
-                <!-- your existing Page 2 code -->
-
-            </section>
-
-        </div>
-
-    </main>
-
-
-    <!-- JAVASCRIPT -->
-
-    <script src="script.js"></script>
-
-</body>
-
-</html>
-    <!-- =========================
-         BACKGROUND
-    ========================== -->
-
-    <div class="background-glow"></div>
-
-
-    <!-- =========================
-         MAIN BOOK
-    ========================== -->
-
-    <main class="book-wrapper">
-
-
-        <div
-            class="book"
-            id="book"
-        >
-
-
-            <!-- =========================
-                 PAGE 1
-            ========================== -->
-
-            <section
-                class="book-page page-one active"
-                id="pageOne"
-            >
-
-
-                <!-- PAGE NUMBER -->
 
                 <div class="page-number">
                     01
                 </div>
 
 
-                <!-- LEFT SIDE -->
+                <!-- LEFT / TEXT -->
 
                 <div class="page-one-left">
+
 
                     <p class="small-label">
                         VISUAL MERCHANDISER
@@ -218,32 +861,37 @@
 
 
                     <button
+                        type="button"
                         class="next-button"
                         id="nextButton"
-                        type="button"
                     >
-
                         NEXT
                         <span>→</span>
-
                     </button>
+
 
                 </div>
 
 
-                <!-- RIGHT SIDE -->
+                <!-- RIGHT / IMAGE -->
 
                 <div class="page-one-right">
 
+
                     <div class="profile-frame">
+
 
                         <img
                             src="assets/profile.jpg"
-                            alt="CHANDU - Visual Merchandiser"
+                            alt="CHANDU — Visual Merchandiser"
                             class="profile-image"
+                            loading="eager"
+                            decoding="async"
                         >
 
+
                     </div>
+
 
                 </div>
 
@@ -252,9 +900,9 @@
 
 
 
-            <!-- =========================
-                 PAGE 2
-            ========================== -->
+            <!-- =====================================
+                 PAGE 02 — ABOUT
+            ====================================== -->
 
             <section
                 class="book-page page-two"
@@ -262,14 +910,10 @@
             >
 
 
-                <!-- PAGE NUMBER -->
-
-                <div class="page-number page-number-two">
+                <div class="page-number">
                     02
                 </div>
 
-
-                <!-- PAGE 2 CONTENT -->
 
                 <div class="about-page">
 
@@ -277,6 +921,7 @@
                     <!-- HEADER -->
 
                     <div class="about-header">
+
 
                         <p class="small-label">
                             VISUAL MERCHANDISER
@@ -295,11 +940,12 @@
                             ABOUT ME
                         </h2>
 
+
                     </div>
 
 
 
-                    <!-- ABOUT CONTENT -->
+                    <!-- CONTENT -->
 
                     <div class="about-content">
 
@@ -332,26 +978,21 @@
                         </p>
 
 
-                        
-
-
                     </div>
 
 
 
-                    <!-- PAGE 2 NAVIGATION -->
+                    <!-- NAVIGATION -->
 
                     <div class="page-two-navigation">
 
 
                         <button
+                            type="button"
                             class="navigation-button"
                             id="previousButton"
-                            type="button"
                         >
-
                             ← PREVIOUS
-
                         </button>
 
 
@@ -364,9 +1005,7 @@
                             href="experience.html"
                             class="navigation-button"
                         >
-
                             NEXT →
-
                         </a>
 
 
@@ -386,11 +1025,98 @@
 
 
 
-    <!-- =========================
+    <!-- =========================================
          JAVASCRIPT
-    ========================== -->
+    ========================================== -->
 
-    <script src="script.js"></script>
+    <script>
+
+        const pageOne =
+            document.getElementById("pageOne");
+
+        const pageTwo =
+            document.getElementById("pageTwo");
+
+        const nextButton =
+            document.getElementById("nextButton");
+
+        const previousButton =
+            document.getElementById("previousButton");
+
+
+        function showPageTwo() {
+
+            pageOne.classList.remove("active");
+
+            pageTwo.classList.add("active");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        function showPageOne() {
+
+            pageTwo.classList.remove("active");
+
+            pageOne.classList.add("active");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        nextButton.addEventListener(
+            "click",
+            showPageTwo
+        );
+
+
+        previousButton.addEventListener(
+            "click",
+            showPageOne
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "ArrowRight") {
+
+                    if (
+                        pageOne.classList.contains("active")
+                    ) {
+
+                        showPageTwo();
+
+                    }
+
+                }
+
+
+                if (event.key === "ArrowLeft") {
+
+                    if (
+                        pageTwo.classList.contains("active")
+                    ) {
+
+                        showPageOne();
+
+                    }
+
+                }
+
+            }
+        );
+
+    </script>
 
 
 </body>
