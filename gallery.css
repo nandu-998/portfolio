@@ -1,527 +1,567 @@
 /* =========================================
-   CHANDU PORTFOLIO
-   VM GALLERY
-   DARK + WHITE + ROYAL BLUE
-   ========================================= */
+   RESET
+========================================= */
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
-    margin: 0;
 
     min-height: 100vh;
 
     background:
         radial-gradient(
-            circle at 50% 20%,
-            rgba(65, 105, 225, 0.12),
+            circle at top,
+            rgba(45, 100, 220, 0.14),
             transparent 45%
         ),
-        #05070d;
+        #050810;
 
     color: #ffffff;
 
-    font-family: Arial, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
 }
 
 
 /* =========================================
-   MAIN PAGE
-   ========================================= */
+   PAGE
+========================================= */
 
 .gallery-page {
 
-    width: 100%;
-
-    max-width: 1100px;
+    width: min(1100px, 94vw);
 
     min-height: 100vh;
 
     margin: auto;
 
-    padding: 35px 25px 45px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
+    padding:
+        35px
+        0
+        30px;
 }
 
 
 /* =========================================
-   PAGE LABEL
-   ========================================= */
+   HEADER
+========================================= */
 
-.page-label {
-
-    color: #4169e1;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    letter-spacing: 4px;
-
-    margin: 0 0 15px;
-
-    text-align: center;
-}
-
-
-/* =========================================
-   HEADING
-   ========================================= */
-
-.gallery-heading {
+.gallery-header {
 
     text-align: center;
 
     margin-bottom: 25px;
 }
 
-.gallery-heading p {
 
-    color: #4169e1;
+.small-label {
 
-    font-size: 11px;
+    color: #4d86ff;
+
+    font-size: 10px;
 
     font-weight: 700;
-
-    letter-spacing: 4px;
-
-    margin: 0 0 8px;
-}
-
-.gallery-heading h1 {
-
-    margin: 0;
-
-    color: #ffffff;
-
-    font-size: 40px;
 
     letter-spacing: 3px;
 }
 
 
-/* =========================================
-   LARGE IMAGE CONTAINER
-   ========================================= */
+.gallery-header h1 {
 
-.gallery-image-container {
+    margin-top: 8px;
 
-    width: 100%;
+    font-size: clamp(
+        32px,
+        6vw,
+        55px
+    );
 
-    max-width: 850px;
+    letter-spacing: 3px;
+}
 
-    height: 500px;
 
-    padding: 8px;
+.subtitle {
 
-    background:
-        rgba(255, 255, 255, 0.035);
+    margin-top: 8px;
 
-    border: 2px solid #4169e1;
+    color: #8995aa;
 
-    border-radius: 14px;
-
-    backdrop-filter: blur(14px);
-
-    -webkit-backdrop-filter: blur(14px);
-
-    box-shadow:
-
-        0 0 25px rgba(65, 105, 225, 0.15),
-
-        inset 0 0 20px rgba(65, 105, 225, 0.05);
+    font-size: 12px;
 }
 
 
 /* =========================================
-   IMAGE
-   ========================================= */
+   CATEGORY BUTTONS
+========================================= */
 
-.gallery-image-container img {
+.category-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 25px;
+}
+
+
+.category-btn {
+
+    min-height: 40px;
+
+    padding:
+        0
+        16px;
+
+    border:
+        1px solid
+        rgba(70, 120, 255, 0.4);
+
+    border-radius: 8px;
+
+    background:
+        rgba(10, 17, 32, 0.8);
+
+    color: #9ca9be;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.category-btn:hover {
+
+    color: #ffffff;
+
+    border-color: #477fff;
+}
+
+
+.category-btn.active {
+
+    background: #235dcc;
+
+    color: #ffffff;
+
+    border-color: #5b8fff;
+
+    box-shadow:
+        0 0 20px
+        rgba(50, 110, 255, 0.25);
+}
+
+
+/* =========================================
+   VIEWER
+========================================= */
+
+.gallery-viewer {
+
+    position: relative;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   COUNTER
+========================================= */
+
+.image-number {
+
+    margin-bottom: 10px;
+
+    color: #738096;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   IMAGE FRAME
+========================================= */
+
+.image-frame {
+
+    position: relative;
+
+    width: 100%;
+
+    height: min(
+        65vh,
+        650px
+    );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(75, 125, 255, 0.35);
+
+    border-radius: 16px;
+
+    background:
+        rgba(3, 7, 15, 0.95);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================
+   MAIN IMAGE
+========================================= */
+
+#galleryImage {
 
     width: 100%;
 
     height: 100%;
 
-    display: block;
-
     object-fit: contain;
 
-    border-radius: 8px;
+    padding: 10px;
 
-    background: #080b13;
+    display: block;
+
+    opacity: 1;
+
+    transform:
+        scale(1);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease;
+
+    will-change:
+        opacity,
+        transform;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+
+#galleryImage.loading {
+
+    opacity: 0;
+
+    transform:
+        scale(0.985);
 }
 
 
 /* =========================================
-   IMAGE COUNTER
-   ========================================= */
+   LOADING
+========================================= */
 
-.gallery-counter {
+.image-loading {
 
-    margin-top: 15px;
+    position: absolute;
 
-    display: flex;
+    z-index: 2;
 
-    gap: 8px;
+    display: none;
 
-    align-items: center;
-
-    color: #ffffff;
-
-    font-size: 13px;
-
-    font-weight: 700;
-
-    letter-spacing: 3px;
-}
-
-#currentImage {
-
-    color: #4169e1;
-
-}
-
-
-/* =========================================
-   DOTS
-   ========================================= */
-
-.gallery-dots {
-
-    max-width: 750px;
-
-    margin-top: 16px;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 7px;
-}
-
-
-.gallery-dot {
-
-    width: 7px;
-
-    height: 7px;
-
-    padding: 0;
-
-    border: 1px solid #4169e1;
-
-    border-radius: 50%;
-
-    background: transparent;
-
-    cursor: pointer;
-
-    transition: 0.25s ease;
-}
-
-
-.gallery-dot:hover {
-
-    background: #4169e1;
-
-    box-shadow:
-        0 0 8px rgba(65, 105, 225, 0.7);
-}
-
-
-.gallery-dot.active {
-
-    width: 22px;
-
-    border-radius: 5px;
-
-    background: #4169e1;
-
-    box-shadow:
-        0 0 10px rgba(65, 105, 225, 0.6);
-}
-
-
-/* =========================================
-   IMAGE BUTTONS
-   ========================================= */
-
-.gallery-navigation {
-
-    width: 100%;
-
-    max-width: 850px;
-
-    margin-top: 22px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 15px;
-}
-
-
-.gallery-btn {
-
-    min-width: 135px;
-
-    height: 42px;
-
-    padding: 0 18px;
-
-    color: #ffffff;
-
-    background:
-        rgba(10, 15, 28, 0.8);
-
-    border: 2px solid #4169e1;
-
-    border-radius: 8px;
+    color: #5d8fff;
 
     font-size: 10px;
 
     font-weight: 700;
 
-    letter-spacing: 1.5px;
-
-    cursor: pointer;
-
-    transition: 0.3s ease;
-
-    box-shadow:
-        0 0 10px rgba(65, 105, 225, 0.12);
+    letter-spacing: 2px;
 }
 
 
-.gallery-btn:hover {
+.image-loading.show {
 
-    background:
-        rgba(65, 105, 225, 0.18);
-
-    border-color: #5b7cff;
-
-    box-shadow:
-        0 0 18px rgba(65, 105, 225, 0.4);
-
-    transform: translateY(-2px);
+    display: block;
 }
 
 
 /* =========================================
-   PAGE NAVIGATION
-   ========================================= */
+   TITLE
+========================================= */
 
-.page-navigation {
+.image-title {
 
-    width: 100%;
+    margin-top: 12px;
 
-    max-width: 850px;
+    color: #ffffff;
 
-    margin-top: 45px;
+    font-size: 12px;
 
-    padding-top: 25px;
+    font-weight: 700;
 
-    border-top:
-        1px solid rgba(255, 255, 255, 0.12);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
+    letter-spacing: 2px;
 }
 
 
-.page-btn {
+/* =========================================
+   CONTROLS
+========================================= */
 
-    display: inline-flex;
+.gallery-controls {
 
-    align-items: center;
+    display: flex;
 
     justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+
+.control-btn {
 
     min-width: 130px;
 
     height: 42px;
 
-    padding: 0 18px;
+    padding:
+        0
+        15px;
 
-    color: #ffffff;
-
-    background:
-        rgba(10, 15, 28, 0.8);
-
-    border: 2px solid #4169e1;
+    border:
+        1px solid
+        rgba(70, 120, 255, 0.45);
 
     border-radius: 8px;
 
-    text-decoration: none;
+    background:
+        rgba(8, 15, 28, 0.9);
 
-    font-size: 10px;
+    color: #ffffff;
+
+    font-size: 9px;
 
     font-weight: 700;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
 
-    transition: 0.3s ease;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
 
-.page-btn:hover {
+.control-btn:hover {
 
-    background:
-        rgba(65, 105, 225, 0.18);
+    background: #1e5dcc;
 
-    border-color: #5b7cff;
+    border-color: #4e86ff;
+}
 
-    box-shadow:
-        0 0 18px rgba(65, 105, 225, 0.4);
 
-    transform: translateY(-2px);
+/* =========================================
+   PAGE NAVIGATION
+========================================= */
+
+.page-navigation {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(70, 120, 255, 0.2);
 }
 
 
 .page-counter {
 
-    color: #ffffff;
+    color: #4d86ff;
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 700;
 
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+}
+
+
+.page-btn {
+
+    min-width: 110px;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(70, 120, 255, 0.45);
+
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.page-btn:hover {
+
+    background: #1e5dcc;
 }
 
 
 /* =========================================
    MOBILE
-   ========================================= */
+========================================= */
 
 @media (max-width: 700px) {
 
     .gallery-page {
 
+        width: 94vw;
+
+        padding-top: 25px;
+    }
+
+
+    .gallery-header h1 {
+
+        font-size: 32px;
+    }
+
+
+    .subtitle {
+
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+
+
+    .category-buttons {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+
+    .category-btn {
+
+        width: 100%;
+
         padding:
-            25px 15px 35px;
+            0
+            5px;
+
+        font-size: 8px;
     }
 
 
-    .gallery-heading h1 {
+    .image-frame {
 
-        font-size: 30px;
+        height: 58vh;
+
+        min-height: 360px;
+
+        border-radius: 12px;
     }
 
 
-    .gallery-image-container {
+    .gallery-controls {
 
-        height: 380px;
+        display: grid;
 
-        padding: 5px;
-
-        border-width: 2px;
-    }
-
-
-    .gallery-navigation {
+        grid-template-columns:
+            1fr 1fr;
 
         gap: 8px;
     }
 
 
-    .gallery-btn {
+    .control-btn {
 
-        min-width: auto;
+        width: 100%;
 
-        flex: 1;
-
-        padding: 0 8px;
-
-        font-size: 8px;
-
-        letter-spacing: 1px;
+        min-width: 0;
     }
 
 
-    .page-navigation {
+    .control-btn:nth-child(2) {
 
-        margin-top: 30px;
+        grid-column:
+            1 / -1;
 
-        gap: 8px;
+        order: 3;
     }
 
 
     .page-btn {
 
-        min-width: auto;
+        min-width: 85px;
 
-        padding: 0 10px;
+        height: 38px;
 
         font-size: 8px;
-
-        letter-spacing: 1px;
-    }
-
-
-    .page-counter {
-
-        font-size: 9px;
-
-        letter-spacing: 2px;
-    }
-
-
-    .gallery-dots {
-
-        max-width: 330px;
-
-        gap: 6px;
-    }
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-   ========================================= */
-
-@media (max-width: 400px) {
-
-    .gallery-image-container {
-
-        height: 300px;
-    }
-
-
-    .gallery-heading h1 {
-
-        font-size: 26px;
-    }
-
-
-    .gallery-btn {
-
-        height: 38px;
-    }
-
-
-    .page-btn {
-
-        height: 38px;
     }
 
 }
