@@ -1,531 +1,659 @@
+/* =====================================================
+   RESET
+===================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
+
     min-height: 100vh;
 
-    background: #050505;
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #101a35 0%,
+            #070b16 45%,
+            #03050a 100%
+        );
 
     color: #ffffff;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.background-glow {
+
+    position: fixed;
+
+    width: 500px;
+    height: 500px;
+
+    left: 50%;
+    top: 35%;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(25, 95, 255, 0.12),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+
+/* =====================================================
+   BOOK WRAPPER
+===================================================== */
+
+.book-wrapper {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        40px
+        30px
+        60px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+}
+
+
+
+/* =====================================================
+   BOOK
+===================================================== */
+
+.book {
+
+    position: relative;
+
+    width: min(1180px, 94vw);
+
+    /*
+       IMPORTANT:
+       Do NOT give the book a small fixed height.
+       Page 2 needs to grow with content.
+    */
+
+    min-height: 760px;
+
+    perspective: 2200px;
+
+    transform-style: preserve-3d;
+}
+
+
+
+/* =====================================================
+   COMMON PAGE
+===================================================== */
+
+.book-page {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 760px;
+
+    height: auto;
+
+    padding: 65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0d1424 0%,
+            #080d18 55%,
+            #050914 100%
+        );
+
+    border:
+        1px solid
+        rgba(45, 112, 255, 0.65);
+
+    border-radius: 5px;
+
+    box-shadow:
+
+        0 30px 80px
+        rgba(0, 0, 0, 0.55),
+
+        0 0 35px
+        rgba(30, 90, 255, 0.08),
+
+        inset 0 0 50px
+        rgba(30, 90, 255, 0.035);
+
+    overflow: visible;
+
+    backface-visibility: visible;
+
+    transform-style: preserve-3d;
+}
+
+
+
+/* =====================================================
+   BOOK EDGE
+===================================================== */
+
+.book-page::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 12px;
+    bottom: 12px;
+
+    width: 3px;
+
+    right: -4px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(255,255,255,0.15),
+            transparent
+        );
+
+    pointer-events: none;
+}
+
+
+
+/* =====================================================
+   PAGE NUMBER
+===================================================== */
+
+.page-number {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 35px;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #3d80ff;
+
+    font-weight: 700;
+}
+
+
+
+/* =====================================================
+   PAGE 1
+===================================================== */
+
+.page-one {
+
+    min-height: 760px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+
+
+/* =====================================================
+   PAGE 1 LEFT
+===================================================== */
+
+.page-one-left {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+}
+
+
+.small-label {
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #3f82ff;
+
+    font-weight: 700;
+
+    margin-bottom: 22px;
+}
+
+
+.main-name {
+
+    font-size:
+        clamp(
+            64px,
+            8vw,
+            120px
+        );
+
+    line-height: 0.9;
+
+    letter-spacing: -5px;
+
+    font-weight: 900;
+
+    color: #ffffff;
+
+    margin-bottom: 25px;
+}
+
+
+.main-role {
+
+    font-size:
+        clamp(
+            20px,
+            2.5vw,
+            32px
+        );
+
+    font-weight: 400;
+
+    color: #cfd6e5;
+
+    margin-bottom: 12px;
+}
+
+
+.location {
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    color: #6e7890;
+}
+
+
+
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
+
+.next-button {
+
+    margin-top: 100px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.next-button span {
+
+    color: #3d82ff;
+
+    margin-left: 10px;
+
+    font-size: 18px;
+}
+
+
+.next-button:hover {
+
+    color: #3d82ff;
+
+    transform:
+        translateX(6px);
+}
+
+
+
+/* =====================================================
+   PAGE 1 RIGHT
+===================================================== */
+
+.page-one-right {
 
     display: flex;
 
     justify-content: center;
 
     align-items: center;
-
-    padding: 30px;
 }
 
 
-/* MAIN BOOK */
+.profile-frame {
 
-main {
-    width: 100%;
-    max-width: 1100px;
+    width:
+        min(
+            390px,
+            100%
+        );
 
-    min-height: 650px;
+    aspect-ratio: 4 / 5;
 
-    padding: 50px;
+    padding: 12px;
 
-    position: relative;
-
-    overflow: hidden;
-
-    border-radius: 20px;
+    border:
+        1px solid
+        rgba(65, 125, 255, 0.35);
 
     background:
         linear-gradient(
-            135deg,
-            rgba(255,255,255,0.08),
-            rgba(255,255,255,0.02)
+            145deg,
+            rgba(30, 60, 120, 0.22),
+            rgba(0, 0, 0, 0.15)
         );
 
-    border: 1px solid rgba(65,105,225,0.35);
-
     box-shadow:
-        0 30px 80px rgba(0,0,0,0.8),
-        0 0 50px rgba(65,105,225,0.12);
-
-    backdrop-filter: blur(20px);
+        0 25px 60px
+        rgba(0, 0, 0, 0.5);
 }
 
 
-/* BLUE GLOW */
+.profile-image {
 
-main::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 300px;
-    height: 300px;
-
-    background: #4169e1;
-
-    filter: blur(140px);
-
-    opacity: 0.15;
-
-    top: -150px;
-    right: -100px;
-
-    pointer-events: none;
-}
-
-
-/* PAGE NUMBER */
-
-main > div:first-child {
-
-    color: #4169e1;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 4px;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-
-/* ABOUT SECTION */
-
-section {
-
-    min-height: 480px;
-
-    display: grid;
-
-    grid-template-columns: 40% 60%;
-
-    align-items: center;
-
-    gap: 50px;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-
-/* PROFILE IMAGE */
-
-section img {
-
-    width: 320px;
-
-    height: 400px;
-
-    object-fit: cover;
-
-    border-radius: 15px;
-
-    border: 1px solid rgba(15, 68, 228, 0.5);
-
-    box-shadow:
-        15px 20px 50px rgba(0,0,0,0.8),
-        0 0 35px rgba(8, 64, 231, 0.15);
-
-    transition: 0.4s ease;
-}
-
-
-section img:hover {
-
-    transform:
-        perspective(800px)
-        rotateY(-5deg)
-        translateY(-8px);
-
-    box-shadow:
-        20px 25px 60px rgba(0,0,0,0.9),
-        0 0 45px rgba(65,105,225,0.3);
-}
-
-
-/* SMALL TITLE */
-
-section div:last-child p:first-child {
-
-    color: #4169e1;
-
-    font-size: 13px;
-
-    letter-spacing: 5px;
-
-    font-weight: bold;
-
-    margin-bottom: 20px;
-}
-
-
-/* NAME */
-
-h1 {
-
-    font-size: clamp(55px, 8vw, 90px);
-
-    letter-spacing: -5px;
-
-    margin-bottom: 25px;
-}
-
-
-/* DESCRIPTION */
-
-section div:last-child p:last-child {
-
-    max-width: 480px;
-
-    color: #b8b8b8;
-
-    font-size: 16px;
-
-    line-height: 1.8;
-}
-
-
-/* NAVIGATION */
-
-main > div:last-child {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    border-top: 1px solid rgba(255,255,255,0.12);
-
-    padding-top: 20px;
-
-    position: relative;
-
-    z-index: 2;
-}
-
-
-button {
-
-    background: rgba(255,255,255,0.04);
-
-    color: hsl(187, 94%, 49%);
-
-    border: 1px solid rgba(255,255,255,0.15);
-
-    padding: 11px 20px;
-
-    border-radius: 7px;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-
-button:hover {
-
-    background: #4169e1;
-
-    border-color: #4169e1;
-
-    box-shadow:
-        0 0 20px rgba(65,105,225,0.4);
-}
-
-
-main > div:last-child span {
-
-    color: #777;
-
-    letter-spacing: 3px;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    body {
-        padding: 15px;
-    }
-
-    main {
-        padding: 30px 20px;
-    }
-
-    section {
-        grid-template-columns: 1fr;
-
-        text-align: center;
-
-        gap: 30px;
-    }
-
-    section img {
-        width: 220px;
-        height: 280px;
-        margin: auto;
-    }
-
-    section div:last-child p:last-child {
-        margin: auto;
-    }
-
-    h1 {
-        font-size: 55px;
-    }
-
-}
-/* =========================================================
-   CHANDU PORTFOLIO
-   EXPERIENCE PAGE — COMPLETE CSS
-   Dark + White + Royal Blue
-   Medium Glass Cards + Navigation Buttons
-   ========================================================= */
-
-
-/* =========================================================
-   EXPERIENCE PAGE
-   ========================================================= */
-
-.experience-page {
-    width: 100%;
-    max-width: 950px;
-    margin: 0 auto;
-    padding: 25px 20px;
-}
-
-
-/* =========================================================
-   PAGE LABEL
-   ========================================================= */
-
-.page-label {
-    color: #4169e1;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    letter-spacing: 3px;
-
-    text-align: center;
-
-    margin-top: 20px;
-
-    margin-bottom: 10px;
-}
-
-
-/* =========================================================
-   EXPERIENCE TITLE
-   ========================================================= */
-
-.experience-title {
-    text-align: center;
-
-    margin-bottom: 30px;
-}
-
-
-.experience-title p {
-    color: #4169e1;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    letter-spacing: 4px;
-
-    margin: 0 0 8px;
-}
-
-
-.experience-title h1 {
-    color: #ffffff;
-
-    font-size: 42px;
-
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    margin: 0;
-}
-
-
-/* =========================================================
-   EXPERIENCE CARD CONTAINER
-   ========================================================= */
-
-.experience-list {
     width: 100%;
 
-    max-width: 760px;
-
-    margin: 0 auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 18px;
-}
-
-
-/* =========================================================
-   EXPERIENCE CARD
-   ========================================================= */
-
-.experience-item {
-
-    min-height: 115px;
-
-    padding: 18px 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.07),
-            rgba(255,255,255,0.025)
-        );
-
-    border: 1px solid rgba(65,105,225,0.55);
-
-    border-radius: 12px;
-
-    backdrop-filter: blur(14px);
-
-    -webkit-backdrop-filter: blur(14px);
-
-    box-shadow:
-
-        inset 0 1px 0 rgba(255,255,255,0.08),
-
-        0 8px 20px rgba(0,0,0,0.35),
-
-        0 0 15px rgba(65,105,225,0.05);
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-/* =========================================================
-   CARD HOVER
-   ========================================================= */
-
-.experience-item:hover {
-
-    transform:
-        translateY(-5px)
-        perspective(700px)
-        rotateX(2deg);
-
-    border-color: #4169e1;
-
-    box-shadow:
-
-        inset 0 1px 0 rgba(255,255,255,0.12),
-
-        0 15px 30px rgba(0,0,0,0.45),
-
-        0 0 20px rgba(65,105,225,0.18);
-}
-
-
-/* =========================================================
-   COMPANY NAME
-   ========================================================= */
-
-.experience-item .company {
+    height: 100%;
 
     display: block;
 
-    color: #4169e1;
+    object-fit: cover;
 
-    font-size: 10px;
+    object-position: center;
 
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 7px;
+    border-radius: 2px;
 }
 
 
-/* =========================================================
-   JOB TITLE
-   ========================================================= */
 
-.experience-item h2 {
+/* =====================================================
+   PAGE 2
+===================================================== */
 
-    color: #ffffff;
+.page-two {
 
-    font-size: 18px;
+    /*
+       This is the important fix.
+       Page 2 is allowed to become taller.
+    */
 
-    font-weight: 600;
+    min-height: 760px;
 
-    line-height: 1.3;
+    height: auto;
 
-    margin: 0 0 7px;
+    padding:
+        70px
+        80px
+        55px;
+
+    overflow: visible;
+
+    display: block;
 }
 
 
-/* =========================================================
-   EXPERIENCE DURATION
-   ========================================================= */
 
-.experience-item p {
+/* =====================================================
+   ABOUT PAGE
+===================================================== */
 
-    color: #9ca3af;
-
-    font-size: 11px;
-
-    margin: 0;
-}
-
-
-/* =========================================================
-   PAGE NAVIGATION
-   ========================================================= */
-
-.page-navigation {
+.about-page {
 
     width: 100%;
 
-    max-width: 760px;
+    min-height: 630px;
 
-    margin: 35px auto 0;
+    height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    overflow: visible;
+}
+
+
+
+/* =====================================================
+   ABOUT HEADER
+===================================================== */
+
+.about-header {
+
+    width: 100%;
+
+    margin-bottom: 45px;
+}
+
+
+.about-header h1 {
+
+    font-size:
+        clamp(
+            55px,
+            7vw,
+            95px
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 20px;
+
+    color: #ffffff;
+}
+
+
+.about-header h2 {
+
+    font-size:
+        clamp(
+            26px,
+            3vw,
+            42px
+        );
+
+    color: #ffffff;
+
+    letter-spacing: 1px;
+}
+
+
+.header-line {
+
+    width: 90px;
+
+    height: 2px;
+
+    background: #2775ff;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 0 12px
+        rgba(39, 117, 255, 0.6);
+}
+
+
+
+/* =====================================================
+   ABOUT CONTENT
+===================================================== */
+
+.about-content {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    color: #cbd2df;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    overflow: visible;
+}
+
+
+.about-content p {
+
+    margin-bottom: 24px;
+}
+
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.about-skills {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+    width: 100%;
+
+    max-width: 900px;
+}
+
+
+.skill-item {
+
+    min-height: 58px;
+
+    padding:
+        16px
+        20px;
+
+    border:
+        1px solid
+        rgba(50, 110, 255, 0.35);
+
+    background:
+        rgba(10, 18, 35, 0.65);
 
     display: flex;
 
     align-items: center;
 
-    justify-content: space-between;
+    gap: 15px;
 
-    gap: 20px;
+    color: #e6eaf2;
+
+    font-size: 13px;
+
+    letter-spacing: 0.5px;
 }
 
 
-/* =========================================================
-   PREVIOUS / NEXT BUTTON
-   ========================================================= */
+.skill-item span {
 
-.page-btn {
+    color: #347cff;
+
+    font-weight: 700;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* =====================================================
+   PAGE 2 NAVIGATION
+===================================================== */
+
+.page-two-navigation {
+
+    width: 100%;
+
+    margin-top: 55px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid
+        rgba(60, 110, 200, 0.25);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.navigation-button {
 
     display: inline-flex;
 
@@ -533,354 +661,662 @@ main > div:last-child span {
 
     justify-content: center;
 
-    min-width: 130px;
+    min-width: 145px;
 
-    padding: 11px 20px;
+    min-height: 48px;
+
+    padding:
+        12px
+        20px;
+
+    background: transparent;
+
+    border:
+        1px solid
+        rgba(50, 115, 255, 0.65);
 
     color: #ffffff;
-
-    background:
-        rgba(10,15,30,0.60);
-
-    border: 1px solid #4169e1;
-
-    border-radius: 8px;
 
     text-decoration: none;
 
     font-size: 11px;
 
-    font-weight: 600;
+    font-weight: 700;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 
-    backdrop-filter: blur(10px);
-
-    -webkit-backdrop-filter: blur(10px);
-
-    box-shadow:
-
-        inset 0 0 12px rgba(65,105,225,0.08),
-
-        0 0 10px rgba(65,105,225,0.08);
+    cursor: pointer;
 
     transition:
-        all 0.3s ease;
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
 
-/* =========================================================
-   BUTTON HOVER
-   ========================================================= */
-
-.page-btn:hover {
-
-    color: #ffffff;
+.navigation-button:hover {
 
     background:
-        rgba(65,105,225,0.15);
+        rgba(35, 100, 255, 0.15);
 
-    border-color: #5b7cff;
+    border-color:
+        #3e82ff;
 
-    box-shadow:
-
-        0 0 15px rgba(65,105,225,0.35),
-
-        inset 0 0 15px rgba(65,105,225,0.08);
-
-    transform: translateY(-2px);
+    transform:
+        translateY(-2px);
 }
 
-
-/* =========================================================
-   BUTTON ACTIVE
-   ========================================================= */
-
-.page-btn:active {
-
-    transform: translateY(0);
-
-    background:
-        rgba(65,105,225,0.25);
-}
-
-
-/* =========================================================
-   PAGE COUNTER
-   ========================================================= */
 
 .page-counter {
 
-    color: #ffffff;
+    color: #7f899e;
 
-    font-size: 12px;
+    font-size: 13px;
+
+    letter-spacing: 4px;
 
     font-weight: 700;
-
-    letter-spacing: 3px;
-
-    white-space: nowrap;
 }
 
 
-/* =========================================================
-   PAGE NUMBER
-   ========================================================= */
+.page-counter::first-letter {
 
-.page-number {
-
-    color: rgba(255,255,255,0.25);
-
-    font-size: 80px;
-
-    font-weight: 800;
-
-    text-align: center;
-
-    line-height: 1;
-
-    margin-top: 25px;
+    color: #3d82ff;
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
 
-@media (max-width: 700px) {
+/* =====================================================
+   PAGE 2 HIDDEN STATE
+===================================================== */
 
-    .experience-page {
+.page-two {
 
-        padding: 20px 15px;
+    display: none;
+}
+
+
+.page-two.show {
+
+    display: block;
+}
+
+
+
+/* =====================================================
+   PAGE 1 HIDE
+===================================================== */
+
+.page-one.hide {
+
+    display: none;
+}
+
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .book-wrapper {
+
+        padding:
+            25px
+            18px
+            45px;
     }
 
 
-    .experience-title {
+    .book {
 
-        margin-bottom: 22px;
+        width: 96vw;
+
+        min-height: auto;
     }
 
 
-    .experience-title h1 {
+    .book-page {
 
-        font-size: 32px;
-
-        letter-spacing: 2px;
+        padding:
+            50px
+            45px;
     }
 
 
-    .experience-list {
+    .page-one {
 
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
-        gap: 14px;
+        gap: 50px;
 
-        max-width: 420px;
+        min-height: auto;
     }
 
 
-    .experience-item {
+    .page-one-left {
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .page-one-right {
+
+        order: -1;
+    }
+
+
+    .profile-frame {
+
+        width: 320px;
+    }
+
+
+    .next-button {
+
+        margin-top: 50px;
+    }
+
+
+    .page-two {
 
         min-height: auto;
 
-        padding: 16px 18px;
+        padding:
+            50px
+            45px;
     }
 
 
-    .experience-item h2 {
+    .about-page {
 
-        font-size: 17px;
+        min-height: auto;
     }
 
 
-    .page-navigation {
+    .about-skills {
 
-        margin-top: 25px;
+        grid-template-columns:
+            1fr;
+    }
 
-        gap: 10px;
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .book-wrapper {
+
+        padding:
+            15px
+            10px
+            30px;
     }
 
 
-    .page-btn {
+    .book {
 
-        min-width: auto;
-
-        padding: 10px 12px;
-
-        font-size: 9px;
-
-        letter-spacing: 1px;
+        width: 96vw;
     }
 
 
-    .page-counter {
+    .book-page {
 
-        font-size: 10px;
-
-        letter-spacing: 2px;
+        padding:
+            40px
+            25px;
     }
 
 
     .page-number {
 
+        top: 18px;
+
+        right: 20px;
+
+        font-size: 9px;
+    }
+
+
+    .page-one {
+
+        min-height: auto;
+
+        gap: 35px;
+    }
+
+
+    .profile-frame {
+
+        width: 100%;
+
+        max-width: 290px;
+    }
+
+
+    .main-name {
+
+        font-size: 58px;
+
+        letter-spacing: -3px;
+    }
+
+
+    .main-role {
+
+        font-size: 20px;
+    }
+
+
+    .next-button {
+
+        margin-top: 40px;
+    }
+
+
+    .page-two {
+
+        padding:
+            45px
+            25px;
+    }
+
+
+    .about-header {
+
+        margin-bottom: 30px;
+    }
+
+
+    .about-header h1 {
+
         font-size: 55px;
 
-        margin-top: 20px;
-    }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 400px) {
-
-    .experience-title h1 {
-
-        font-size: 28px;
+        letter-spacing: -3px;
     }
 
 
-    .experience-item h2 {
+    .about-content {
 
-        font-size: 16px;
+        font-size: 15px;
+
+        line-height: 1.7;
     }
 
 
-    .page-btn {
+    .skill-item {
 
-        padding: 9px 10px;
+        font-size: 12px;
 
-        font-size: 8px;
+        padding: 14px;
+    }
+
+
+    .page-two-navigation {
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+
+        justify-content: center;
     }
 
 
     .page-counter {
 
+        order: -1;
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    .navigation-button {
+
+        min-width: 125px;
+
         font-size: 9px;
     }
 
 }
-/* FORCE EXPERIENCE NAVIGATION BORDER */
 
-.experience-page ~ .page-navigation .page-btn,
-.page-navigation .page-btn {
 
-    display: inline-flex !important;
 
-    align-items: center;
-    justify-content: center;
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
 
-    min-width: 130px;
-    height: 42px;
+@media (max-width: 380px) {
 
-    padding: 0 20px;
+    .book-page {
 
-    color: #ffffff !important;
+        padding:
+            35px
+            18px;
+    }
 
-    background: rgba(8, 12, 25, 0.85) !important;
 
-    border: 2px solid #4169e1 !important;
+    .main-name {
 
-    border-radius: 8px !important;
+        font-size: 48px;
+    }
 
-    text-decoration: none !important;
+
+    .about-header h1 {
+
+        font-size: 45px;
+    }
+
+
+    .about-content {
+
+        font-size: 14px;
+    }
+
+}
+
+/* =====================================================
+   EXPERIENCE PAGE
+===================================================== */
+
+.experience-page {
+
+    min-height: 760px;
+
+    height: auto;
+
+    padding:
+        65px
+        75px
+        45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: visible;
+}
+
+
+/* HEADER */
+
+.experience-header {
+
+    margin-bottom: 45px;
+}
+
+
+.experience-header h1 {
+
+    font-size:
+        clamp(
+            55px,
+            7vw,
+            95px
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 15px;
+
+    color: #ffffff;
+}
+
+
+.experience-subtitle {
+
+    color: #9ba6ba;
+
+    font-size: 16px;
+
+    letter-spacing: 0.5px;
+}
+
+
+
+/* EXPERIENCE CONTENT */
+
+.experience-content {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+
+/* EXPERIENCE ITEM */
+
+.experience-item {
+
+    display: grid;
+
+    grid-template-columns:
+        150px
+        1fr;
+
+    gap: 35px;
+
+    padding:
+        28px
+        30px;
+
+    border:
+        1px solid
+        rgba(50, 110, 255, 0.35);
+
+    background:
+        rgba(8, 15, 30, 0.65);
+
+    box-shadow:
+        inset 0 0 30px
+        rgba(30, 80, 180, 0.03);
+}
+
+
+.experience-year {
+
+    color: #3d82ff;
 
     font-size: 11px;
 
     font-weight: 700;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 
-    box-sizing: border-box;
-
-    box-shadow:
-        0 0 8px rgba(65, 105, 225, 0.25),
-        inset 0 0 10px rgba(65, 105, 225, 0.08);
-
-    transition: all 0.3s ease;
+    padding-top: 5px;
 }
 
 
-.page-navigation .page-btn:hover {
+.experience-brand {
 
-    background: rgba(65, 105, 225, 0.20) !important;
+    color: #3d82ff;
 
-    border-color: #5b7cff !important;
+    font-size: 11px;
 
-    box-shadow:
-        0 0 18px rgba(65, 105, 225, 0.55),
-        inset 0 0 12px rgba(65, 105, 225, 0.15);
+    font-weight: 700;
 
-    transform: translateY(-2px);
-}
-/* SKILL GLASS CARDS */
+    letter-spacing: 4px;
 
-.skill-item {
-    padding: 22px 24px;
-
-    background: rgba(20, 24, 35, 0.45);
-
-    border: 2px solid rgba(65, 105, 225, 0.65);
-
-    border-radius: 12px;
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    box-shadow:
-        0 0 15px rgba(65, 105, 225, 0.12),
-        inset 0 0 15px rgba(255, 255, 255, 0.02);
-
-    transition: all 0.3s ease;
-}
-.skill-item:hover {
-    border-color: #4169e1;
-
-    background: rgba(30, 38, 60, 0.55);
-
-    box-shadow:
-        0 0 25px rgba(65, 105, 225, 0.35),
-        inset 0 0 15px rgba(65, 105, 225, 0.08);
-
-    transform: translateY(-3px);
-}
-/* =========================
-   SKILLS GLASS CARDS
-   ========================= */
-
-.experience-card {
-    padding: 22px 24px;
-
-    background: rgba(18, 22, 35, 0.55);
-
-    border: 2px solid rgba(65, 105, 225, 0.70);
-
-    border-radius: 12px;
-
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    box-shadow:
-        0 0 18px rgba(65, 105, 225, 0.15),
-        inset 0 0 18px rgba(255, 255, 255, 0.03);
-
-    transition: all 0.3s ease;
+    margin-bottom: 8px;
 }
 
 
-/* HOVER */
+.experience-main h2 {
 
-.experience-card:hover {
-    border-color: #4169e1;
+    font-size:
+        clamp(
+            24px,
+            3vw,
+            38px
+        );
 
-    background: rgba(25, 32, 52, 0.70);
+    color: #ffffff;
 
-    box-shadow:
-        0 0 25px rgba(65, 105, 225, 0.35),
-        inset 0 0 18px rgba(65, 105, 225, 0.08);
+    margin-bottom: 8px;
+}
 
-    transform: translateY(-3px);
+
+.experience-location {
+
+    color: #8995aa;
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
+}
+
+
+.experience-description {
+
+    max-width: 760px;
+
+    color: #c7cfdd;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+
+/* SKILLS */
+
+.experience-points {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-top: 20px;
+}
+
+
+.experience-points span {
+
+    padding:
+        8px
+        12px;
+
+    border:
+        1px solid
+        rgba(55, 120, 255, 0.35);
+
+    color: #b9c4d8;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+
+/* CAREER TRACK */
+
+.career-track {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+
+.career-step {
+
+    padding:
+        15px;
+
+    border:
+        1px solid
+        rgba(55, 120, 255, 0.3);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.career-step span {
+
+    color: #3d82ff;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.career-step strong {
+
+    color: #e8edf5;
+
+    font-size: 12px;
+}
+
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .experience-page {
+
+        padding:
+            45px
+            25px
+            35px;
+    }
+
+
+    .experience-item {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding: 22px;
+    }
+
+
+    .career-track {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .experience-header h1 {
+
+        font-size: 52px;
+    }
+
+
+    .experience-description {
+
+        font-size: 14px;
+    }
+
 }
