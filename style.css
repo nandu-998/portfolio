@@ -1290,6 +1290,40 @@ body {
     transform: translateY(-3px);
 }
 
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .note-overlay {
+        padding: 16px;
+    }
+
+    .note-popup {
+        padding: 34px 24px 28px;
+
+        border-radius: 15px;
+    }
+
+    .note-popup h2 {
+        font-size: 26px;
+    }
+
+    .note-text {
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+    .note-continue {
+        width: 100%;
+    }
+
+}
+
 /* =========================================
    PROFESSIONAL NOTE POPUP
 ========================================= */
@@ -1497,38 +1531,6 @@ body {
 
     box-shadow:
         0 12px 30px rgba(20, 85, 220, 0.4);
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
-    .note-overlay {
-        padding: 16px;
-    }
-
-    .note-popup {
-        padding: 34px 24px 28px;
-
-        border-radius: 15px;
-    }
-
-    .note-popup h2 {
-        font-size: 26px;
-    }
-
-    .note-text {
-        font-size: 14px;
-        line-height: 1.65;
-    }
-
-    .note-continue {
-        width: 100%;
-    }
-
 }
 
 
